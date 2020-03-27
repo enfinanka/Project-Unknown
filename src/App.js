@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <div className="app-header">
-        <p>GHOST GAMING</p>
+        <h2>GHOST GAMING</h2>
       </div>
 
       <div className="app-navbar">
