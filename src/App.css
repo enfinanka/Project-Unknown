@@ -1,5 +1,28 @@
-
-.App{
-  height: 100vh;
+.app-wrapper {
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 15% 1fr;
+  grid-template-columns: 20% 1fr 20%;
+  font-family: 'Geometria';
+  color: white;
+  background-color: #090D11;
 }
 
+.app-header {
+  display: flex;
+  justify-content: center;
+  grid-column: 1/4;
+  color: white;
+  font-size: 2em;
+  padding-top: 20px;
+}
+
+.app-navbar {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.app-content {
+  grid-column: 2/3;
+  text-align: center;
+}

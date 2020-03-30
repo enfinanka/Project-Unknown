@@ -7,8 +7,9 @@ import OverWatchScreen from "./Screens/OverwatchScreen/OverWatchScreen";
 import PropTypes from 'prop-types';
 import NavBarComponent from "./Components/NavBar/NavBarComponent"
 
-import 'semantic-ui-css/semantic.min.css';
 import './App.css';
+
+
 
 
 
@@ -73,6 +74,19 @@ function App() {
       </div>
 
     </Router>
+    // <div className="app-wrapper">
+    //   <div className="app-header">
+    //     <h2>GHOST GAMING</h2>
+    //   </div>
+
+    //   <div className="app-navbar">
+
+    //   </div>
+
+    //   <div className="app-content">
+    //     <HomeScreen></HomeScreen>
+    //   </div>
+    // </div>
   );
 }
 

@@ -1,0 +1,13 @@
+.main-header {
+  font-family: 'Geometria-Medium';
+}
+
+.ongoing-events-wrapper {
+  padding: 0 50px 0 50px;
+}
+
+.upcoming-match-wrapper {
+  width: 100%;
+  background: #141C24;
+  padding: 50px;
+}
