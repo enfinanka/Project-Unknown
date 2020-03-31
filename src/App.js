@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,Fragment } from 'react';
 import { Header, Icon, Menu, Sidebar, Image, } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import LolScreen from "./Screens/LolScreen/LolScreen";
@@ -7,6 +7,7 @@ import OverWatchScreen from "./Screens/OverwatchScreen/OverWatchScreen";
 import PropTypes from 'prop-types';
 import TeamScreen from './Screens/Teams/TeamScreen';
 import EventScreen from './Screens/Events/EventScreen';
+
 
 
 import './App.css';
@@ -21,6 +22,10 @@ function App() {
 
   const [visible, setVisible] = useState(false)
   return (
+    <Fragment>
+      <div className="app-header">
+        <h2>GHOST GAMING</h2>
+      </div>
 
     <Router>
       {visible === false ?
@@ -82,6 +87,12 @@ function App() {
       </Sidebar.Pushable>
     </Router>
 
+      <div className="app-wrapper">
+        <div className="app-content">
+          <HomeScreen></HomeScreen>
+        </div>
+      </div>
+    </Fragment>
   );
 }
 
