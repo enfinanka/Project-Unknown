@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import './App.css';
 import HomeScreen from './Screens/HomeScreen/HomeScreen'
@@ -6,7 +6,7 @@ import HomeScreen from './Screens/HomeScreen/HomeScreen'
 
 function App() {
   return (
-    <div className="app-wrapper">
+    <Fragment>
       <div className="app-header">
         <h2>GHOST GAMING</h2>
       </div>
@@ -15,10 +15,12 @@ function App() {
 
       </div>
 
-      <div className="app-content">
-        <HomeScreen></HomeScreen>
+      <div className="app-wrapper">
+        <div className="app-content">
+          <HomeScreen></HomeScreen>
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 }
 

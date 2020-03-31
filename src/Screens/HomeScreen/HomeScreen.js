@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import { Grid, Image } from 'semantic-ui-react';
 
 import './HomeScreen.css'
+import MatchCardComponent from '../../Components/MatchCard/MatchCardComponent'
+import sweden from '../../assets/images/sweden.png'
 
 export default function HomeScreen() {
   return (
@@ -27,38 +29,45 @@ export default function HomeScreen() {
       <div className="upcoming-match-wrapper">
         <Grid>
           <Grid.Row columns={5}>
+
             <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              <MatchCardComponent>
+                <img src={sweden} className="swedenimg" alt="flag"/>
+                <p>VS.</p>
+                <img src={sweden} className="swedenimg" alt="flag" />
+                <div className="break" />
+                <p style={{fontSize: '1.5em'}}>NIP</p>
+                <p style={{fontSize: '1.5em'}}>Fnatic</p>
+              </MatchCardComponent>
+            </Grid.Column>
+
+            <Grid.Column>
+              <MatchCardComponent>
+                <img src={sweden} className="swedenimg" alt="flag"/>
+                <p>VS.</p>
+                <img src={sweden} className="swedenimg" alt="flag" />
+                <div className="break" />
+                <p style={{fontSize: '1.5em'}}>NIP</p>
+                <p style={{fontSize: '1.5em'}}>Fnatic</p>
+              </MatchCardComponent>
+            </Grid.Column>
+
+            <Grid.Column>
+              <MatchCardComponent>
+                <img src={sweden} className="swedenimg" alt="flag"/>
+                <p>VS.</p>
+                <img src={sweden} className="swedenimg" alt="flag" />
+                <div className="break" />
+                <p style={{fontSize: '1.5em'}}>NIP</p>
+                <p style={{fontSize: '1.5em'}}>Fnatic</p>
+              </MatchCardComponent>
+            </Grid.Column>
+
+            <Grid.Column>
+              <MatchCardComponent></MatchCardComponent>
             </Grid.Column>
             <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-            </Grid.Column>
-          </Grid.Row>
-          
-          <Grid.Row columns={5}>
-            <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              <MatchCardComponent></MatchCardComponent>
             </Grid.Column>
           </Grid.Row>
         </Grid>
