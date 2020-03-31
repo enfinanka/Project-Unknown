@@ -9,22 +9,28 @@
 
 .app-header {
   width: 100vw;
-  height: 13vh;
-  background-color: black;
+  height: 15vh;
+  background-color:black;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   position: sticky;
   transition: 500ms;
   top: 0;
   z-index: 1;
-  color: white;
-  font-size: 2em;
-  padding-top: 20px; 
+  color:gray;
+
   margin-bottom: 5%; 
+
+
 }
 
-
-
+.ghost{
+  position: absolute;
+  right:  135px;
+  bottom: 40px;
+  width: 60px;
+}
 .app-content {
   grid-column: 2/3;
   text-align: center;

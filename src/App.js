@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       {visible === false ?
-        <div className="app-header"><h2 className='nav-header'>GHOST GAMING</h2>
+        <div className="app-header"><h1 className='nav-header'>GHOST GAMING</h1><Image  className='ghost' src='https://i.pinimg.com/originals/e3/42/4d/e3424d9c598ee9697ba7b2cad54e4842.png'/>
           <div className='menu-icon' onClick={() => setVisible(true) & window.scrollTo(0, 0)} >
             <h3 >MENU <Icon link name='bars' /></h3> </div></div>
         : <div className='navbar-close'></div>}
