@@ -10,19 +10,20 @@
 .app-header {
   width: 100vw;
   height: 13vh;
+  background-color: black;
   display: flex;
   justify-content: center;
   position: sticky;
+  transition: 500ms;
   top: 0;
   z-index: 1;
   color: white;
   font-size: 2em;
-  padding-top: 20px;  
+  padding-top: 20px; 
+  margin-bottom: 5%; 
 }
 
-.app-navbar {
-  grid-column: 3/4;
-}
+
 
 .app-content {
   grid-column: 2/3;
@@ -32,7 +33,7 @@
 .menu-icon{
   position: absolute;
   right: 5%;
-  top: 30%;
+  top: 40%;
   cursor: pointer;
   color: grey;
 }
@@ -41,18 +42,11 @@
   color: white;
 }
 
-.navbar{
-  z-index: 1;
-  width: 100%;
-  transition: 500ms;
-  height: 100px;
-  background-color:black;
-  position: fixed;
-  top: 0;
-}
 .navbar-close{
   height: 0;
+  transition: 500ms;
 }
+
 
 
 

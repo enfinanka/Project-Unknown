@@ -1,4 +1,4 @@
-import React, { useState,Fragment } from 'react';
+import React, { useState, } from 'react';
 import { Header, Icon, Menu, Sidebar, Image, } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import LolScreen from "./Screens/LolScreen/LolScreen";
@@ -12,27 +12,17 @@ import EventScreen from './Screens/Events/EventScreen';
 
 import './App.css';
 
-
-
-
-
-
 function App() {
 
 
   const [visible, setVisible] = useState(false)
-  return (
-    <Fragment>
-      <div className="app-header">
-        <h2>GHOST GAMING</h2>
-      </div>
 
+  return (
     <Router>
       {visible === false ?
-        <div className="navbar">
-          <div className="app-header"><h2>GHOST GAMING</h2></div>
+        <div className="app-header"><h2 className='nav-header'>GHOST GAMING</h2>
           <div className='menu-icon' onClick={() => setVisible(true) & window.scrollTo(0, 0)} >
-            <h2 >MENU <Icon link name='bars' /></h2></div></div>
+            <h3 >MENU <Icon link name='bars' /></h3> </div></div>
         : <div className='navbar-close'></div>}
 
       <Sidebar.Pushable>
@@ -68,10 +58,6 @@ function App() {
         </Sidebar>
         <Sidebar.Pusher dimmed={visible}>
           <div className="app-wrapper">
-            <div className="app-header">
-            </div>
-            <div className="app-navbar">
-            </div>
             <div className="app-content">
               <Switch>
                 <Route path="/HomeScreen" component={HomeScreen} />
@@ -86,13 +72,6 @@ function App() {
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </Router>
-
-      <div className="app-wrapper">
-        <div className="app-content">
-          <HomeScreen></HomeScreen>
-        </div>
-      </div>
-    </Fragment>
   );
 }
 
