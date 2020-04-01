@@ -1,0 +1,39 @@
+.app-header {
+  width: 100vw;
+  height: 15vh;
+  background-color:black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: sticky;
+  transition: 500ms;
+  top: 0;
+  z-index: 1;
+  color:gray;
+  margin-bottom: 5%; 
+}
+
+.ghost{
+  position: absolute;
+  right:  135px;
+  bottom: 40px;
+  width: 60px;
+}
+
+
+.menu-icon{
+  position: absolute;
+  right: 5%;
+  top: 40%;
+  cursor: pointer;
+  color: grey;
+}
+.menu-icon:hover{
+  transition: 700ms;
+  color: white;
+}
+
+.navbar-close{
+  height: 0;
+  transition: 500ms;
+}

@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import {  Icon,  Image, } from 'semantic-ui-react'
+import './NavBarComponent.css'
 
-import 'semantic-ui-css/semantic.min.css';
+
 
 export default class NavBar extends Component {
 
