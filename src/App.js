@@ -6,9 +6,6 @@ import PropTypes from 'prop-types';
 import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import TeamScreen from './Screens/TeamsScreen/TeamScreen';
 import EventScreen from './Screens/EventsScreen/EventScreen';
-
-
-
 import './App.css';
 
 function App() {
