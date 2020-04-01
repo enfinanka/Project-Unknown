@@ -43,7 +43,7 @@ function App() {
               <Image size='tiny' centered src='https://static.coingecko.com/s/halloween/ghost_a_in_dark-19d45e5ab0a77025805542d9f9160a4d784b8fa897b836c88f22463b65761ec5.png' />
               <h1>Ghost Gaming</h1>
             </Menu.Item>
-            <Menu.Item as={Link} to='HomeScreen'>
+            <Menu.Item as={Link} to='Home'>
               <Header textAlign='left' inverted color='grey' ><Icon name='eject' size='tiny' />Home</Header>
 
             </Menu.Item>
@@ -60,7 +60,7 @@ function App() {
           <div className="app-wrapper">
             <div className="app-content">
               <Switch>
-                <Route path="/HomeScreen" component={HomeScreen} />
+                <Route path="/Home" component={HomeScreen} />
                 <Route path="/Teams" component={TeamScreen} />
                 <Route path="/Events" component={EventScreen} />
                 <Route path="/LeageOfLegends" component={LolScreen} />
