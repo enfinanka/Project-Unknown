@@ -1,13 +1,11 @@
 import React, { useState, } from 'react';
 import { Header, Icon, Menu, Sidebar, Image, } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import LolScreen from "./Screens/LolScreen/LolScreen";
 import HomeScreen from "./Screens/HomeScreen/HomeScreen";
-import OverWatchScreen from "./Screens/OverwatchScreen/OverWatchScreen";
 import PropTypes from 'prop-types';
 import TeamScreen from './Screens/Teams/TeamScreen';
 import EventScreen from './Screens/Events/EventScreen';
-
+import NavBar from './Components/NavBar/NavBarComponent'
 
 
 import './App.css';
@@ -19,12 +17,7 @@ function App() {
 
   return (
     <Router>
-      {visible === false ?
-        <div className="app-header"><h1 className='nav-header'>GHOST GAMING</h1><Image  className='ghost' src='https://i.pinimg.com/originals/e3/42/4d/e3424d9c598ee9697ba7b2cad54e4842.png'/>
-          <div className='menu-icon' onClick={() => setVisible(true) & window.scrollTo(0, 0)} >
-            <h3 >MENU <Icon link name='bars' /></h3> </div></div>
-        : <div className='navbar-close'></div>}
-
+      <NavBar visible={visible} setVisible={setVisible} />
       <Sidebar.Pushable>
         <Sidebar
           as={Menu}
@@ -63,8 +56,6 @@ function App() {
                 <Route path="/Home" component={HomeScreen} />
                 <Route path="/Teams" component={TeamScreen} />
                 <Route path="/Events" component={EventScreen} />
-                <Route path="/LeageOfLegends" component={LolScreen} />
-                <Route path="/OverWatch" component={OverWatchScreen} />
                 <Route path="/" exact component={HomeScreen} />
               </Switch>
             </div>
