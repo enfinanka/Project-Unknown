@@ -7,10 +7,6 @@ import sweden from '../../assets/images/sweden.png'
 
 export default function HomeScreen() {
 
-
-
-
- 
   return (
     <Fragment>
       <p className="main-header header-margin">ONGOING EVENTS</p>
