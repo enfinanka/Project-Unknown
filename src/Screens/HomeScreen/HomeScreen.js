@@ -4,6 +4,7 @@ import { Grid, Image } from 'semantic-ui-react';
 import './HomeScreen.css'
 import MatchCardComponent from '../../Components/MatchCard/MatchCardComponent'
 import sweden from '../../assets/images/sweden.png'
+import CardComponent from '../../Components/CardComponent/CardComponent';
 
 export default function HomeScreen() {
   return (
@@ -13,13 +14,13 @@ export default function HomeScreen() {
         <Grid>
           <Grid.Row columns={3}>
             <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              <CardComponent></CardComponent>
             </Grid.Column>
             <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              <CardComponent></CardComponent>
             </Grid.Column>
             <Grid.Column>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              <CardComponent></CardComponent>
             </Grid.Column>
           </Grid.Row>
         </Grid>
