@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import TeamScreen from './Screens/Teams/TeamScreen';
 import EventScreen from './Screens/Events/EventScreen';
-import NavBar from './Components/NavBar/NavBarComponent'
+import NavBar from './Components/NavBar/NavBarComponent';
 import './App.css';
 
 function App() {
