@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment} from 'react'
 import { Grid, Image } from 'semantic-ui-react';
 
 import './HomeScreen.css'
@@ -6,6 +6,7 @@ import MatchCardComponent from '../../Components/MatchCard/MatchCardComponent'
 import sweden from '../../assets/images/sweden.png'
 
 export default function HomeScreen() {
+
   return (
     <Fragment>
       <p className="main-header header-margin">ONGOING EVENTS</p>
@@ -24,7 +25,7 @@ export default function HomeScreen() {
           </Grid.Row>
         </Grid>
       </div>
-      
+
       <p className="main-header sub-header-margin">Matches</p>
       <div className="upcoming-match-wrapper">
         <Grid>
@@ -32,34 +33,34 @@ export default function HomeScreen() {
 
             <Grid.Column>
               <MatchCardComponent>
-                <img src={sweden} className="swedenimg" alt="flag"/>
+                <img src={sweden} className="swedenimg" alt="flag" />
                 <p>VS.</p>
                 <img src={sweden} className="swedenimg" alt="flag" />
                 <div className="break" />
-                <p style={{fontSize: '1.5em'}}>NIP</p>
-                <p style={{fontSize: '1.5em'}}>Fnatic</p>
+                <p style={{ fontSize: '1.5em' }}>NIP</p>
+                <p style={{ fontSize: '1.5em' }}>Fnatic</p>
               </MatchCardComponent>
             </Grid.Column>
 
             <Grid.Column>
               <MatchCardComponent>
-                <img src={sweden} className="swedenimg" alt="flag"/>
+                <img src={sweden} className="swedenimg" alt="flag" />
                 <p>VS.</p>
                 <img src={sweden} className="swedenimg" alt="flag" />
                 <div className="break" />
-                <p style={{fontSize: '1.5em'}}>NIP</p>
-                <p style={{fontSize: '1.5em'}}>Fnatic</p>
+                <p style={{ fontSize: '1.5em' }}>NIP</p>
+                <p style={{ fontSize: '1.5em' }}>Fnatic</p>
               </MatchCardComponent>
             </Grid.Column>
 
             <Grid.Column>
               <MatchCardComponent>
-                <img src={sweden} className="swedenimg" alt="flag"/>
+                <img src={sweden} className="swedenimg" alt="flag" />
                 <p>VS.</p>
                 <img src={sweden} className="swedenimg" alt="flag" />
                 <div className="break" />
-                <p style={{fontSize: '1.5em'}}>NIP</p>
-                <p style={{fontSize: '1.5em'}}>Fnatic</p>
+                <p style={{ fontSize: '1.5em' }}>NIP</p>
+                <p style={{ fontSize: '1.5em' }}>Fnatic</p>
               </MatchCardComponent>
             </Grid.Column>
 
