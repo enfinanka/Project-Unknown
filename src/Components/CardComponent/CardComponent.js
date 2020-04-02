@@ -6,7 +6,7 @@ export default function CardComponent(props) {
   return (
     <Fragment>
       <div className="cards">
-        {props.children}
+        {props.children}      
         <div className="eventText">
           <h3 style={{marginBottom: '5px'}} >Lorem Impusm</h3>
           <img src={calendarIcon} />
