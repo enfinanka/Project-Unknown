@@ -2,14 +2,11 @@ import React, { Fragment } from 'react'
 import './CardComponent.css';
 import calendarIcon from '../../assets/images/calendar.png';
 
-import { Image } from 'semantic-ui-react';
-
-
-export default function CardComponents() {
+export default function CardComponent(props) {
   return (
     <Fragment>
       <div className="cards">
-        <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />        
+        {props.children}
         <div className="eventText">
           <h3 style={{marginBottom: '5px'}} >Lorem Impusm</h3>
           <img src={calendarIcon} />

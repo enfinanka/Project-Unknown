@@ -15,13 +15,21 @@ export default function HomeScreen() {
         <Grid>
           <Grid.Row columns={3}>
             <Grid.Column>
-              <CardComponent></CardComponent>
+              <CardComponent>
+                <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              </CardComponent>
             </Grid.Column>
+            
             <Grid.Column>
-              <CardComponent></CardComponent>
+              <CardComponent>
+                <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              </CardComponent>
             </Grid.Column>
+
             <Grid.Column>
-              <CardComponent></CardComponent>
+              <CardComponent>
+                <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              </CardComponent>
             </Grid.Column>
           </Grid.Row>
         </Grid>
