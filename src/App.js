@@ -11,8 +11,6 @@ import NavBar from './Components/NavBar/NavBarComponent'
 import './App.css';
 
 function App() {
-
-
   const [visible, setVisible] = useState(false)
 
   return (
