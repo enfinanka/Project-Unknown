@@ -15,12 +15,11 @@ export default function withHttpRequests(WrappedComponent, selectData) {
     }
 
     getToken = () => {
-      console.log('token');
 
       const key = 'TedNilsson_61cf5';
       const secret = '9802bbcf-5a86-4895-bdd1-e9348f0e5b40';
 
-      fetch('https://api.abiosgaming.com/v2/oauth/access_token', {
+      return fetch('https://api.abiosgaming.com/v2/oauth/access_token', {
         method: 'POST',
         body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
         headers: {
@@ -29,7 +28,7 @@ export default function withHttpRequests(WrappedComponent, selectData) {
       }).then(res => res.json())
         .then((res) => {
           this.setState({ token: res.access_token })
-      
+
 
 
         })
@@ -39,25 +38,13 @@ export default function withHttpRequests(WrappedComponent, selectData) {
 
 
 
-    getData = (endpoint) => {
+    getData = async (endpoint) => {
 
       const accessUrl = '&access_token='
-      console.log(endpoint);
-      console.log(this.state.token, 'token kod');
-
-
-     setTimeout(() => {
-      fetch("https://api.abiosgaming.com/v2/" + endpoint + accessUrl + this.state.token)
-      .then(response => response.json())
-      .then((response) => {
-        console.log(response);
-      })
-       
-     }, 500);
-
-       
-
-      
+      if (!this.state.token) await this.getToken();
+      return fetch("https://api.abiosgaming.com/v2/" + endpoint + accessUrl + this.state.token)
+        .then(res => res.json())
+        
     }
 
 

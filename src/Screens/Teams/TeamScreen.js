@@ -18,6 +18,21 @@ class TeamScreen extends Component {
   testdata = () => {
     let endpoint = 'games?'
     this.props.getData(endpoint)
+    .then((result) => {
+      console.log(result);
+      
+
+    })
+
+    
+    
+    
+   
+    
+    
+    
+    
+    
    
     
    
