@@ -1,12 +1,16 @@
-import React, { Fragment} from 'react'
+import React, { Fragment } from 'react'
 import { Grid, Image } from 'semantic-ui-react';
 
 import './HomeScreen.css'
 import MatchCardComponent from '../../Components/MatchCard/MatchCardComponent'
 import sweden from '../../assets/images/sweden.png'
 import CardComponent from '../../Components/CardComponent/CardComponent';
+import withHttpRequests from '../../HOCS/withHttpRequests';
 
-export default function HomeScreen() {
+function HomeScreen() {
+
+ 
+ 
 
   return (
     <Fragment>
@@ -16,19 +20,19 @@ export default function HomeScreen() {
           <Grid.Row columns={3}>
             <Grid.Column>
               <CardComponent>
-              <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />
-              </CardComponent>
-            </Grid.Column>
-            
-            <Grid.Column>
-              <CardComponent>
-              <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />
+                <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />
               </CardComponent>
             </Grid.Column>
 
             <Grid.Column>
               <CardComponent>
-              <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />
+                <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              </CardComponent>
+            </Grid.Column>
+
+            <Grid.Column>
+              <CardComponent>
+                <Image className="eventImage" src='https://react.semantic-ui.com/images/wireframe/image.png' />
               </CardComponent>
             </Grid.Column>
           </Grid.Row>
@@ -85,3 +89,5 @@ export default function HomeScreen() {
     </Fragment>
   )
 }
+
+export default withHttpRequests(HomeScreen);
