@@ -27,7 +27,7 @@ export default function withHttpRequests(WrappedComponent, selectData) {
           sessionStorage.setItem('token', res.access_token)
           setTimeout(() => {
             this.getToken(true)
-          }, 350000);
+          }, res.expires_in + '000' - '300000');
         })
     }
 
