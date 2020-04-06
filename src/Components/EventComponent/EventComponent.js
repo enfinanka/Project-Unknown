@@ -20,7 +20,7 @@ export default class EventComponent extends Component {
     return (
     <Fragment>
         {this.props.children}
-        <Button inverted color='yellow' className="readmore-button" style={this.state.styles}>
+        <Button size="huge" inverted color='yellow' className="readmore-button" style={this.state.styles}>
           Read More
         </Button>
     </Fragment>

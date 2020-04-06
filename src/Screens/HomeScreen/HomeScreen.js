@@ -11,11 +11,11 @@ export default function HomeScreen() {
 
   return (
     <div className="homescreen-wrapper">
-      <EventComponent top={'75vh'} left={'22vw'}>
+      <EventComponent top={'75vh'} left={'20vw'}>
         <img src={ESLbg} alt="ESL Pro League" className="event-image"/>
       </EventComponent>
 
-      <EventComponent top={'75vh'} left={'72vw'}>
+      <EventComponent top={'75vh'} left={'71.5vw'}>
         <img src={RIObg} alt="Rio BG" className="event-image"/>
       </EventComponent>
       

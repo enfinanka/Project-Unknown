@@ -1,0 +1,15 @@
+footer {
+  background: black;
+  width: 100vw;
+  height: 5vh;
+  border-top: 2px solid #a2ab00;
+  color: white;
+}
+
+.ghost-heading {
+  position: absolute;
+  top: 7vh;
+  left: 40%;
+  color: yellowgreen;
+  font-size: 5em;
+}

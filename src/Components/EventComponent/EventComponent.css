@@ -1,6 +1,13 @@
 .event-image {
   width: 50%;
   height: 100%;
+  border-left: 1px solid #a2ab00;
+  border-top: 1px solid #a2ab00;
+  object-fit: cover;
+}
+
+.event-image:first-child {
+  border-left: 0px;
 }
 
 .readmore-button {

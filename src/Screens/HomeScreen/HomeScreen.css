@@ -1,12 +1,7 @@
 .homescreen-wrapper {
   display: flex;
   overflow: hidden;
-  height: 90vh;
+  height: 95vh;
   width: 100vw;
-}
-
-.home-footer {
-  background: white;
-  width: 100vw;
-  height: 10vh;
+  padding-top: 5vh;
 }
