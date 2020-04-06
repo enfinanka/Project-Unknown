@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 
-
 export default function withHttpRequests(WrappedComponent, selectData) {
 
   return class extends Component {
     constructor(props) {
       super(props);
+
       this.getToken();
-      this.state = {
-        token: '',
-      }
-
-
     }
 
-    getToken = () => {
+    getToken = async (force = false) => {
+
+      if (sessionStorage.getItem('token') && !force) return
 
       const key = 'TedNilsson_61cf5';
       const secret = '9802bbcf-5a86-4895-bdd1-e9348f0e5b40';
@@ -27,33 +24,24 @@ export default function withHttpRequests(WrappedComponent, selectData) {
         }
       }).then(res => res.json())
         .then((res) => {
-          this.setState({ token: res.access_token })
-
-
-
+          sessionStorage.setItem('token', res.access_token)
+          setTimeout(() => {
+            this.getToken(true)
+          }, 350000);
         })
-
-
     }
 
-
-
-    getData = async (endpoint) => {
+    getData = async (endpoint, dataCallBack) => {
 
       const accessUrl = '&access_token='
-      if (!this.state.token) await this.getToken();
-      return fetch("https://api.abiosgaming.com/v2/" + endpoint + accessUrl + this.state.token)
+
+      if (!sessionStorage.getItem('token')) await this.getToken(false);
+      return fetch("https://api.abiosgaming.com/v2/" + endpoint + accessUrl + sessionStorage.getItem('token'))
         .then(res => res.json())
-        
+        .then(data => dataCallBack(data))
     }
 
-
-
-
-
     render() {
-
-
       return (
         <WrappedComponent
           getData={this.getData}

@@ -7,42 +7,15 @@ class TeamScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {}
-
-   this.testdata()
-  
-    
-    
-  }
- 
-
-  testdata = () => {
-    let endpoint = 'games?'
-    this.props.getData(endpoint)
-    .then((result) => {
-      console.log(result);
-      
-
-    })
-
-    
-    
-    
-   
-    
-    
-    
-    
-    
-   
-    
-   
-
-
+    this.props.getData('games?', this.sendDataFunc)
   }
 
+  sendDataFunc = (data) => {
+    console.log(data)
+  }
 
   render() {
-    
+
     return (
       <div>
 
