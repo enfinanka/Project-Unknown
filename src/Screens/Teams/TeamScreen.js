@@ -7,7 +7,7 @@ class TeamScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {}
-    this.props.getData('games?', this.sendDataFunc)
+    this.props.getData('teams', this.sendDataFunc)
   }
 
   sendDataFunc = (data) => {

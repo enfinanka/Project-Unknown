@@ -27,17 +27,18 @@ export default function withHttpRequests(WrappedComponent, selectData) {
           sessionStorage.setItem('token', res.access_token)
           setTimeout(() => {
             this.getToken(true)
-          }, 350000);
+          }, res.expires_in + '000' - '300000');
         })
     }
 
     getData = async (endpoint, dataCallBack) => {
 
-      const accessUrl = '&access_token='
+      const accessUrl = '?&access_token='
 
       if (!sessionStorage.getItem('token')) await this.getToken(false);
       return fetch("https://api.abiosgaming.com/v2/" + endpoint + accessUrl + sessionStorage.getItem('token'))
         .then(res => res.json())
+
         .then(data => dataCallBack(data))
     }
 
