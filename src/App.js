@@ -6,6 +6,7 @@ export default function App() {
   return (
     <Fragment>
       <HomeScreen></HomeScreen>
+      <div className="home-footer"></div>
     </Fragment>
   )
 }
