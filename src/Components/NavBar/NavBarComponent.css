@@ -1,6 +1,6 @@
 .app-header {
   width: 100vw;
-  height: 15vh;
+  height: 100px;
   background-color:black;
   display: flex;
   justify-content: center;
@@ -10,7 +10,6 @@
   top: 0;
   z-index: 1;
   color:gray;
-  margin-bottom: 5%; 
 }
 
 .ghost{

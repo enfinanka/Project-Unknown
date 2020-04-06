@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 
-export default class EventScreen extends Component {
+import withHttpRequests from '../../HOCS/withHttpRequests';
+
+class EventScreen extends Component {
   render() {
+    
     return (
       <div>
         
@@ -9,3 +12,4 @@ export default class EventScreen extends Component {
     )
   }
 }
+export default withHttpRequests(EventScreen);
