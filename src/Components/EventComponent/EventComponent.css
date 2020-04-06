@@ -1,8 +1,9 @@
 .event-image {
   width: 50%;
   height: 100%;
-  border-left: 1px solid #a2ab00;
-  border-top: 1px solid #a2ab00;
+  /* border-left: 1px solid yellow; */
+  /* border-top: 1px solid #a2ab00; */
+  /* object-fit: fill; */
   object-fit: cover;
 }
 

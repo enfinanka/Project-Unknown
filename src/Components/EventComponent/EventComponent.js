@@ -6,21 +6,23 @@ import './EventComponent.css'
 export default class EventComponent extends Component {
   constructor(props) {
     super(props)
-    console.log(this.props)
+
+    const { topPosition, leftPosition } = this.props
 
     this.state = {
-      styles: {
-        top: this.props.top,
-        left: this.props.left
+      btnStyles: {
+        top: topPosition,
+        left: leftPosition
       }
     }
+
   }
   
   render() {
     return (
     <Fragment>
         {this.props.children}
-        <Button size="huge" inverted color='yellow' className="readmore-button" style={this.state.styles}>
+        <Button size="huge" inverted color={this.props.btnColor} className="readmore-button" style={this.state.btnStyles}>
           Read More
         </Button>
     </Fragment>

@@ -6,12 +6,11 @@ import './App.css'
 export default function App() {
   return (
     <Fragment>
-      <h1 className="ghost-heading" style={{fontFamily: 'Geometria'}}>Ghost Gaming</h1>
       <HomeScreen></HomeScreen>
 
       <footer>
         <h1 style={{fontFamily: 'Geometria'}}>
-          GhostGaming
+          Footer Here
         </h1>
       </footer>
     </Fragment>
