@@ -1,0 +1,46 @@
+#button-group {
+ margin-top: 50px;
+ margin-left: 10px;
+}
+
+.infortmation > h1 {
+  font-size: 3rem;
+}
+
+
+
+.content {
+  margin-top: 2rem;
+  height: 500px;
+  width: 100%;
+  padding-top: 5px;
+  display: grid;
+  grid-template-columns: 60% 5% 25%;
+  grid-template-rows: 10% 60% 10%;
+}
+
+.content > .image {
+  margin: 15px;
+  margin-left: 20px;
+  float: left;
+}
+
+
+.content > p {
+  margin-top: 10px;
+  grid-column: 1;
+  grid-row: 4;
+  margin-left: 20px;
+}
+
+.matches {
+  background-color: red;
+  float: right;
+  margin-top: 10px;
+  grid-column: 3/4;
+  grid-row: 2;
+}
+
+.content > h2 {
+  grid-column: 3/4;
+}
