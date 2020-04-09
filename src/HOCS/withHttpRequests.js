@@ -6,7 +6,7 @@ export default function withHttpRequests(WrappedComponent, selectData) {
     constructor(props) {
       super(props);
 
-      this.getToken();
+      this.getToken(true);
     }
 
     getToken = async (force = false) => {
@@ -26,26 +26,25 @@ export default function withHttpRequests(WrappedComponent, selectData) {
         .then((res) => {
           sessionStorage.setItem('token', res.access_token)
           setTimeout(() => {
+            sessionStorage.removeItem('token')
             this.getToken(true)
           }, res.expires_in + '000' - '300000');
         })
     }
 
-    getData = async (endpoint, dataCallBack) => {
-
-      const accessUrl = '?&access_token='
+    getTeams = async (game, tournament, page) => {
+      const url = "https://api.abiosgaming.com/v2/teams";
+      const queryString = `?with[]game=${game}&tournaments[]=${tournament}&page=${page}&access_token=`
 
       if (!sessionStorage.getItem('token')) await this.getToken(false);
-      return fetch("https://api.abiosgaming.com/v2/" + endpoint + accessUrl + sessionStorage.getItem('token'))
+      return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
         .then(res => res.json())
-
-        .then(data => dataCallBack(data))
     }
 
     render() {
       return (
         <WrappedComponent
-          getData={this.getData}
+          getTeams={this.getTeams}
           {...this.props}
         />
       )

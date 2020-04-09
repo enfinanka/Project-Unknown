@@ -44,16 +44,12 @@ function App() {
           </Menu.Item>
         </Sidebar>
         <Sidebar.Pusher dimmed={visible}>
-          <div className="app-wrapper">
-            <div className="app-content">
-              <Switch>
-                <Route path="/Home" component={HomeScreen} />
-                <Route path="/Teams" component={TeamScreen} />
-                <Route path="/Events" component={EventScreen} />
-                <Route path="/" exact component={HomeScreen} />
-              </Switch>
-            </div>
-          </div>
+          <Switch>
+            <Route path="/Home" component={HomeScreen} />
+            <Route path="/Teams" component={TeamScreen} />
+            <Route path="/Events" component={EventScreen} />
+            <Route path="/" exact component={HomeScreen} />
+          </Switch>
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </Router>
