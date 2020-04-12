@@ -14,6 +14,7 @@ function App() {
   const [visible, setVisible] = useState(false)
 
   return (
+    
     <Router>
       <NavBar visible={visible} setVisible={setVisible} />
       <Sidebar.Pushable>

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 
 
 import withHttpRequests from '../../HOCS/withHttpRequests';
@@ -11,41 +11,40 @@ class TeamScreen extends Component {
     super(props);
     this.state = {
       Teams: [],
-      page: 1,
     }
 
-    this.tournamentTeams();
+ this.tournamentTeams()
+
+
   }
 
-  
+ 
 
-  tournamentTeams = () => {
-    this.props.getTeams(5, 4430, this.state.page)
+ 
+
+  tournamentTeams = async () => {
+    this.props.getTeams(5, 4430, 1)
       .then(res => {
+        console.log('körs3');
+        
         this.setState({
           Teams: [...res.data]
         })
        
       })
+    
   }
 
-  teams2=()=>{
-    this.setState({page:2})
-    this.tournamentTeams();
-
-
-  }
   render() {
-console.log(this.state.page);
+
 
     return (
-      <Fragment>
-        <Card.Group centered >
-          {this.state.Teams.map((team, i) => (<TeamComponent key={i} team={this.state.Teams[i]} />))}
-        </Card.Group>
-      <button onClick={() =>  this.teams2() }>hej</button>
 
-      </Fragment>
+      <Card.Group centered >
+        {this.state.Teams.map((team, i) => (<TeamComponent key={i} team={this.state.Teams[i]} />))}
+      </Card.Group>
+
+
 
     )
   }
