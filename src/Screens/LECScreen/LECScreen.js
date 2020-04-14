@@ -11,9 +11,9 @@ class LECScreen extends Component {
       matches: [],
       rosters: [],
       buttons: {
-        informationIsActive: 'active',
-        teamsIsActive: 'inactive',
-        standingsIsActive: 'inactive'
+        informationIsActive: true,
+        teamsIsActive: false,
+        standingsIsActive: false
       }
     }
     this.upcomingMatches();
@@ -66,6 +66,7 @@ class LECScreen extends Component {
           </Card.Group> */}
         </div>
         <div className="main-content">
+          {<p></p>
         </div>
       </div>
     </div>
