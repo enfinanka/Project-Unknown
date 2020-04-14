@@ -23,7 +23,8 @@ class LECScreen extends Component {
   upcomingMatches = () => {
     this.props.getMatches()
       .then(res => {
-        console.log(res);
+        console.log('lecscreen',res);
+        
 
         this.setState({ matches: res })
         this.setState({ rosters: res.next_series.rosters })
@@ -38,7 +39,7 @@ class LECScreen extends Component {
           <div className="content-header">
             <img src={this.state.matches.images && this.state.matches.images.banner} />
           </div>
-          <LecInfoComponent></LecInfoComponent>
+          <LecInfoComponent matches={this.state.matches}/>
           <div className="sub-navbar">
             <Button size="medium" basic color='black'>Information</Button>
             <Button size="medium" basic color='black'>Teams</Button>
@@ -53,11 +54,11 @@ class LECScreen extends Component {
           
             <Card>
               <Card.Content>
-                <Header textAlign='center'>
+                <Header textAlign='center' size="small">
                 {this.state.rosters[0] && this.state.rosters[1].teams[0].short_name}
-                <Image spaced="right" size='massive' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
+                <Image spaced="right" size='large' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
                   VS
-                <Image spaced="left" size='massive' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
+                <Image spaced="left" size='large' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
                 {this.state.rosters[0] && this.state.rosters[0].teams[0].short_name}
                 </Header>
               </Card.Content>
