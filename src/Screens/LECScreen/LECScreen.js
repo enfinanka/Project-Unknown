@@ -3,13 +3,19 @@ import { Card, Header, Image, Button } from 'semantic-ui-react';
 import './LECScreen.css'
 
 import withHttpRequests from '../../HOCs/withHttpRequest';
+import LecInfoComponent from '../../Components/LecInfoComponent/LecInfoComponent';
 
 class LECScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       matches: [],
-      rosters: []
+      rosters: [],
+      buttons: {
+        informationIsActive: true,
+        teamsIsActive: false,
+        standingsIsActive: false
+      }
     }
     this.upcomingMatches();
   }
@@ -33,7 +39,7 @@ class LECScreen extends Component {
           <div className="content-header">
             <img src={this.state.matches.images && this.state.matches.images.banner} />
           </div>
-
+          <LecInfoComponent></LecInfoComponent>
           <div className="sub-navbar">
             <Button size="medium" basic color='black'>Information</Button>
             <Button size="medium" basic color='black'>Teams</Button>
