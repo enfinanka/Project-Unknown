@@ -1,70 +1,30 @@
-import React, { useState, } from 'react';
-import { Header, Icon, Menu, Sidebar, Image, } from 'semantic-ui-react'
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import PropTypes from 'prop-types';
 
+import HomeScreen from './Screens/HomeScreen/HomeScreen'
+import './App.css'
+import ESLEventScreen from './Screens/ESLEventScreen/ESLEventScreen'
+import RioEventScreen from './Screens/RioEventScreen/RioEventScreen'
 
-import HomeScreen from "./Screens/HomeScreen/HomeScreen";
-import TeamScreen from './Screens/Teams/TeamScreen';
-import EventScreen from './Screens/Events/EventScreen';
-import NavBar from './Components/NavBar/NavBarComponent';
-import './App.css';
-
-function App() {
-  const [visible, setVisible] = useState(false)
+export default function App() {
 
   return (
     <Router>
-      <NavBar visible={visible} setVisible={setVisible} />
-      <Sidebar.Pushable>
-        <Sidebar
-          as={Menu}
-          animation='overlay'
-          icon='labeled'
-          inverted
-          direction='right'
-          onHide={() => setVisible(false)}
-          vertical
-          visible={visible}
-          width='wide'
-          onClick={() => setVisible(false)}
-        >
-          <Menu.Item  >
-            <Image size='tiny' centered src='https://static.coingecko.com/s/halloween/ghost_a_in_dark-19d45e5ab0a77025805542d9f9160a4d784b8fa897b836c88f22463b65761ec5.png' />
-            <h1>Ghost Gaming</h1>
-          </Menu.Item>
-          <Menu.Item as={Link} to='Home'>
-            <Header textAlign='left' inverted color='grey' ><Icon name='eject' size='tiny' />Home</Header>
-          </Menu.Item>
-          <Menu.Item as={Link} to='Events'>
-            <Header textAlign='left' inverted color='grey'><Icon name="globe" size='tiny' />Events</Header>
-          </Menu.Item>
-          <Menu.Item as={Link} to='Teams'>
-            <Header textAlign='left' inverted color='grey'><Icon name="users" size='tiny' />Teams</Header>
-          </Menu.Item>
-        </Sidebar>
-        <Sidebar.Pusher dimmed={visible}>
-          <div className="app-wrapper">
-            <div className="app-content">
-              <Switch>
-                <Route path="/Home" component={HomeScreen} />
-                <Route path="/Teams" component={TeamScreen} />
-                <Route path="/Events" component={EventScreen} />
-                <Route path="/" exact component={HomeScreen} />
-              </Switch>
-            </div>
-          </div>
-        </Sidebar.Pusher>
-      </Sidebar.Pushable>
+      <header className="app-header">
+        <h1 style={{marginBottom: '0'}}>Ghost</h1>
+        <h1 style={{color: 'yellow', margin: '0'}}>Gaming</h1>
+        
+        <nav>
+          <Link to={'/Home'} className="home-nav-button">Home</Link>
+        </nav>
+
+      </header>
+      <Switch>
+        <Route path="/Home" component={HomeScreen} />
+        <Route path="/ESLPro" component={ESLEventScreen} />
+        <Route path="/Rio" component={RioEventScreen} />
+        <Route path="/" exact component={HomeScreen} />
+      </Switch>
     </Router>
-  );
+  )
 }
-
-export default App;
-
-App.propTypes = {
-  animation: PropTypes.string,
-  direction: PropTypes.string,
-  visible: PropTypes.bool,
-}
-
