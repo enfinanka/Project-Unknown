@@ -27,10 +27,9 @@ class LECScreen extends Component {
 
         this.setState({ matches: res })
         this.setState({ rosters: res.next_series.rosters })
-
-
       })
   }
+
   render() {
 
     return (
@@ -54,11 +53,11 @@ class LECScreen extends Component {
           
             <Card>
               <Card.Content>
-                <Header textAlign='center' size="tiny">
+                <Header textAlign='center'>
                 {this.state.rosters[0] && this.state.rosters[1].teams[0].short_name}
-                <Image spaced="right" size='small' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
+                <Image spaced="right" size='massive' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
                   VS
-                <Image spaced="left" size='small' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
+                <Image spaced="left" size='massive' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
                 {this.state.rosters[0] && this.state.rosters[0].teams[0].short_name}
                 </Header>
               </Card.Content>
@@ -66,6 +65,9 @@ class LECScreen extends Component {
           {/* <Card.Group centered>
             {this.state.rosters.map((team, i) => (<MatchComponent key={i} team={this.state.rosters[i]} />))}
           </Card.Group> */}
+        </div>
+        <div className="main-content">
+          <p></p>
         </div>
       </div>
     </div>
