@@ -10,7 +10,7 @@
   width: 100%;
   background: white;
   grid-template-rows: 20% 5% 1fr;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr minmax(186px, 25%);
 }
 
 .next-match-wrapper {

@@ -41,19 +41,19 @@ class LECScreen extends Component {
           </div>
 
           <div className="next-match-wrapper">
-            <h1 style={{marginBottom: '0px'}}>Next Match</h1>
+            <h2 style={{marginBottom: '0px'}}>Next Match</h2>
             <Header sub size='huge' textAlign='center'>
-              {this.state.matches.next_series && this.state.matches.next_series.start}
+              <p>{this.state.matches.next_series && this.state.matches.next_series.start}</p>
             </Header>
           
-            <Card fluid>
+            <Card>
               <Card.Content>
-                <Header textAlign='center'>
-                {this.state.rosters[0] && this.state.rosters[1].teams[0].name}
-                <Image spaced="right" size='massive' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
+                <Header textAlign='center' size="tiny">
+                {this.state.rosters[0] && this.state.rosters[1].teams[0].short_name}
+                <Image spaced="right" size='small' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
                   VS
-                <Image spaced="left" size='massive' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
-                {this.state.rosters[0] && this.state.rosters[0].teams[0].name}
+                <Image spaced="left" size='small' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
+                {this.state.rosters[0] && this.state.rosters[0].teams[0].short_name}
                 </Header>
               </Card.Content>
             </Card>
