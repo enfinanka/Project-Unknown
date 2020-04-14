@@ -7,7 +7,7 @@ export default class MatchComponent extends Component {
     console.log(this.props.team);
     return (
 
-      <Card>
+      <Card className='test'>
         <Card.Content >
           <Card.Header textAlign='center'>{this.props.team.teams[0].name}<Image spaced='left' src={this.props.team.teams[0].images.thumbnail} alt='flag' /></Card.Header>
           </Card.Content>
