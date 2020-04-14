@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import HomeScreen from './Screens/HomeScreen/HomeScreen'
 import './App.css'
-import ESLEventScreen from './Screens/ESLEventScreen/ESLEventScreen'
+import LECScreen from './Screens/LECScreen/LECScreen'
 import RioEventScreen from './Screens/RioEventScreen/RioEventScreen'
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
       </header>
       <Switch>
         <Route path="/Home" component={HomeScreen} />
-        <Route path="/ESLPro" component={ESLEventScreen} />
+        <Route path="/LEC" component={LECScreen} />
         <Route path="/Rio" component={RioEventScreen} />
         <Route path="/" exact component={HomeScreen} />
       </Switch>
