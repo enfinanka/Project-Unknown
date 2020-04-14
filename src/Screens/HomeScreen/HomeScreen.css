@@ -1,42 +1,9 @@
-header {
-  position: absolute;
-  top: 0;
-  margin-left: 50px;
-  color: white;
-}
-
-.logo {
-  display: flex;
-  font-size: 1.8em;
-  color: yellow;
-}
-
-.logo img {
-  height: 120px;
-  width: 100px;
-}
-
-.logo h1 {
-  font-size: 2em;
-}
-
-nav {
-  top: 10px;
-  position: absolute;
-  right: 30px;
-  color: white;
-}
-
-nav h3 {
-  font-size: 2.2em;
-}
-
 .homescreen-wrapper {
   display: flex;
   overflow: hidden;
-  height: 95vh;
+  height: 90vh;
   width: 100vw;
-  padding-top: 5vh;
+  padding-bottom: 40px;
 }
 
 

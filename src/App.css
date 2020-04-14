@@ -1,8 +1,28 @@
-footer {
-  background: black;
+.app-header {
   width: 100vw;
-  height: 5vh;
-  border-top: 2px solid #a2ab00;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  padding-left: 20px;
+}
+
+nav {
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+  font-size: 1.5em;
+}
+
+.yellow-heading {
+  color: yellow;
+}
+
+.home-nav-button {
+  color: white;
+}
+
+.home-nav-button:hover {
+  transition: 1s;
+  color: yellow;
 }
