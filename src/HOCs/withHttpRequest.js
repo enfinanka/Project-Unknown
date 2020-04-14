@@ -7,9 +7,10 @@ export default function withHttpRequests(WrappedComponent) {
       super(props);
 
       this.getToken(true);
+
     }
 
-    getToken = async (force = false) => {
+    getToken = async (force) => {
 
       if (sessionStorage.getItem('token') && !force) return
 
@@ -19,17 +20,30 @@ export default function withHttpRequests(WrappedComponent) {
       return fetch('https://api.abiosgaming.com/v2/oauth/access_token', {
         method: 'POST',
         body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
         }
       }).then(res => res.json())
         .then((res) => {
+          console.log('körs');
+
           sessionStorage.setItem('token', res.access_token)
           setTimeout(() => {
             sessionStorage.removeItem('token')
             this.getToken(true)
           }, res.expires_in + '000' - '300000');
         })
+    }
+
+
+    getMatches = async () => {
+      const url = "https://api.abiosgaming.com/v2/tournaments/4244";
+      const queryString = `&page=1&access_token=`
+
+      if (!sessionStorage.getItem('token')) await this.getToken(false);
+      return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
+        .then(res => res.json())
     }
 
     getTeams = async (game, tournament, page) => {
@@ -39,12 +53,16 @@ export default function withHttpRequests(WrappedComponent) {
       if (!sessionStorage.getItem('token')) await this.getToken(false);
       return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
         .then(res => res.json())
+
     }
+
+
 
     render() {
       return (
         <WrappedComponent
           getTeams={this.getTeams}
+          getMatches={this.getMatches}
           {...this.props}
         />
       )

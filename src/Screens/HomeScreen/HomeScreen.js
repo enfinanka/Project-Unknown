@@ -11,7 +11,7 @@ function HomeScreen() {
 
   return (
     <div className="homescreen-wrapper">
-      <EventComponent topPosition={'80vh'} leftPosition={'20vw'} btnColor="yellow" linkUrl={'/ESLPro'} >
+      <EventComponent topPosition={'80vh'} leftPosition={'20vw'} btnColor="yellow" linkUrl={'/LEC'} >
         <img src={ESLbg} alt="ESL Pro League" className="event-image" />
       </EventComponent>
 
