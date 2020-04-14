@@ -66,7 +66,7 @@ class LECScreen extends Component {
           </Card.Group> */}
         </div>
         <div className="main-content">
-          {<p></p>
+          <p></p>
         </div>
       </div>
     </div>
