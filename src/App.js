@@ -20,12 +20,14 @@ export default function App() {
         </nav>
 
       </header>
+      <div>
       <Switch>
         <Route path="/Home" component={HomeScreen} />
         <Route path="/LEC" component={LECScreen} />
         <Route path="/Rio" component={RioEventScreen} />
         <Route path="/" exact component={HomeScreen} />
       </Switch>
+      </div>
     </Router>
   )
 }
