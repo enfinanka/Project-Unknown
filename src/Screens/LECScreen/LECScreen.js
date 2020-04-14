@@ -46,14 +46,14 @@ class LECScreen extends Component {
               {this.state.matches.next_series && this.state.matches.next_series.start}
             </Header>
           
-            <Card fluid>
+            <Card>
               <Card.Content>
                 <Header textAlign='center'>
-                {this.state.rosters[0] && this.state.rosters[1].teams[0].name}
+                {this.state.rosters[0] && this.state.rosters[1].teams[0].short_name}
                 <Image spaced="right" size='massive' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
                   VS
                 <Image spaced="left" size='massive' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
-                {this.state.rosters[0] && this.state.rosters[0].teams[0].name}
+                {this.state.rosters[0] && this.state.rosters[0].teams[0].short_name}
                 </Header>
               </Card.Content>
             </Card>
