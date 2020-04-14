@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, Header, Image, } from 'semantic-ui-react';
 import './EventScreen.css'
 
-import withHttpRequests from '../../HOCS/withHttpRequests';
+import withHttpRequests from '../../HOCs/withHttpRequest';
 import MatchComponent from '../../Components/MatchComponent/MatchComponent';
 
 

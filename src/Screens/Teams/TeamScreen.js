@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 
 
 import './TeamScreen.css'
-import withHttpRequests from '../../HOCS/withHttpRequests';
+import withHttpRequests from '../../HOCs/withHttpRequest';
 import TeamComponent from '../../Components/TeamComponent/TeamComponent'
 import { Card, Button } from 'semantic-ui-react';
 

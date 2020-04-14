@@ -1,24 +1,14 @@
-.main-header {
-  font-family: 'Geometria-Medium';
+.homescreen-wrapper {
+  display: flex;
+  overflow: hidden;
+  height: 90vh;
+  width: 100vw;
+  padding-bottom: 40px;
 }
 
-.ongoing-events-wrapper {
-  padding: 0 50px 0 50px;
-}
 
-.upcoming-match-wrapper {
-  width: 100%;
-  background: #1C2440;
-  border-radius: 5px;
-  padding: 50px;
-}
-
-.swedenimg {
-  height: 50px;
-  width: 50px;
-}
-
-.break {
-  flex-basis: 100%;
-  height: 0;
-}
+  /* CENTER WITH ABSOLUTE POSITION */
+  /* top: 900px; */
+  /* left: 51%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%); */

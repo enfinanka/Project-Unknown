@@ -1,67 +1,25 @@
-import React, { Fragment } from 'react'
-import { Grid, Image } from 'semantic-ui-react';
+import React from 'react'
+
+import ESLbg from '../../assets/images/ESLBG.jpg'
+import RIObg from '../../assets/images/RioBG.jpg'
 
 import './HomeScreen.css'
-import withHttpRequests from '../../HOCS/withHttpRequests';
+import EventComponent from '../../Components/EventComponent/EventComponent';
+import withHttpRequest from '../../HOCs/withHttpRequest'
 
 function HomeScreen() {
 
-
-
-
   return (
-    <div className="app-wrapper">
-      <div className="app-content">
-        <Fragment>
-          <p className="main-header header-margin">ONGOING EVENTS</p>
-          <div className="ongoing-events-wrapper">
-            <Grid>
-              <Grid.Row columns={3}>
-                <Grid.Column>
-                
-                </Grid.Column>
+    <div className="homescreen-wrapper">
+      <EventComponent topPosition={'80vh'} leftPosition={'20vw'} btnColor="yellow" linkUrl={'/ESLPro'} >
+        <img src={ESLbg} alt="ESL Pro League" className="event-image" />
+      </EventComponent>
 
-                <Grid.Column>
-                 
-                </Grid.Column>
-
-                <Grid.Column>
-                 
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </div>
-
-          <p className="main-header sub-header-margin">Matches</p>
-          <div className="upcoming-match-wrapper">
-            <Grid>
-              <Grid.Row columns={5}>
-
-                <Grid.Column>
-                
-                </Grid.Column>
-
-                <Grid.Column>
-                
-                </Grid.Column>
-
-                <Grid.Column>
-                 
-                </Grid.Column>
-
-                <Grid.Column>
-                
-                </Grid.Column>
-                <Grid.Column>
-                 
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </div>
-        </Fragment>
-      </div>
+      <EventComponent topPosition={'80vh'} leftPosition={'71.5vw'} btnColor="yellow" linkUrl={'/Rio'}>
+        <img src={RIObg} alt="Rio BG" className="event-image"/>
+      </EventComponent>
     </div>
   )
 }
 
-export default withHttpRequests(HomeScreen);
+export default withHttpRequest(HomeScreen);

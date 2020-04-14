@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from './node_modules/react';
 
-export default function withHttpRequests(WrappedComponent, selectData) {
+export default function withHttpRequests(WrappedComponent) {
 
   return class extends Component {
     constructor(props) {
