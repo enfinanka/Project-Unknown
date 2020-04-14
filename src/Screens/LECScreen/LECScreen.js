@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import { Card, Header, Image, } from 'semantic-ui-react';
+import { Card, Header, Image, Button } from 'semantic-ui-react';
 import './LECScreen.css'
 
 import withHttpRequests from '../../HOCs/withHttpRequest';
-import MatchComponent from '../../Components/MatchComponent/MatchComponent';
-
-
 
 class LECScreen extends Component {
   constructor(props) {
@@ -37,49 +34,35 @@ class LECScreen extends Component {
             <img src={this.state.matches.images && this.state.matches.images.banner} />
           </div>
 
-          <div className="sub-nav-links">
-            <p>Hej</p>
+          <div className="sub-navbar">
+            <Button size="medium" basic color='black'>Information</Button>
+            <Button size="medium" basic color='black'>Teams</Button>
+            <Button size="medium" basic color='black'>Standings</Button>
           </div>
 
-          <div className="main-content">
-            <Header size='large' textAlign='center'>
-              {this.state.matches.next_series && this.state.matches.next_series.title}
+          <div className="next-match-wrapper">
+            <h1 style={{marginBottom: '0px'}}>Next Match</h1>
+            <Header sub size='huge' textAlign='center'>
+              {this.state.matches.next_series && this.state.matches.next_series.start}
             </Header>
-          <Header sub size='huge' textAlign='center'>
-            {this.state.matches.next_series && this.state.matches.next_series.start}
-          </Header>
           
-          <Card.Content>
-            <Header textAlign='center' color='red'>VS</Header>
-            <Card.Group centered>
-              <Card>
-                <Card.Content>
-                  <Image size='tiny' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
-                </Card.Content>
-                <Card.Content>
-                  <Header>
-                    Score
-                  </Header>
-                </Card.Content>
-              </Card>
-
-              <Card>
-                <Card.Content>
-                  <Image size='tiny' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
-                </Card.Content>
-                <Card.Content>
-                  <Header>Score</Header>
-                </Card.Content>
-              </Card>
-            </Card.Group>
-
-          </Card.Content>
-          <Card.Group centered>
+            <Card fluid>
+              <Card.Content>
+                <Header textAlign='center'>
+                {this.state.rosters[0] && this.state.rosters[1].teams[0].name}
+                <Image spaced="right" size='massive' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
+                  VS
+                <Image spaced="left" size='massive' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
+                {this.state.rosters[0] && this.state.rosters[0].teams[0].name}
+                </Header>
+              </Card.Content>
+            </Card>
+          {/* <Card.Group centered>
             {this.state.rosters.map((team, i) => (<MatchComponent key={i} team={this.state.rosters[i]} />))}
-          </Card.Group>
+          </Card.Group> */}
         </div>
       </div>
-      </div>
+    </div>
     )
   }
 }
