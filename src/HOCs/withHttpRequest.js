@@ -7,6 +7,7 @@ export default function withHttpRequests(WrappedComponent) {
       super(props);
 
       this.getToken(true);
+    
 
     }
 
@@ -33,6 +34,18 @@ export default function withHttpRequests(WrappedComponent) {
             sessionStorage.removeItem('token')
             this.getToken(true)
           }, res.expires_in + '000' - '300000');
+        })
+    }
+
+    getData = async () => {
+      const url = "https://api.abiosgaming.com/v2/tournaments/4244";
+      const queryString = `&page=1&access_token=`
+
+      if (!sessionStorage.getItem('token')) await this.getToken(false);
+      return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
+        .then(res => res.json())
+        .then(res => {
+          console.log(res);
         })
     }
 
