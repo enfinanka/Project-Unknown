@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 
-export default class ESLEventScreen extends Component {
+import withHttpRequests from '../../HOCs/withHttpRequest';
+
+class ESLEventScreen extends Component {
   render() {
+    
     return (
       <div>
         
@@ -9,3 +12,4 @@ export default class ESLEventScreen extends Component {
     )
   }
 }
+export default withHttpRequests(ESLEventScreen);
