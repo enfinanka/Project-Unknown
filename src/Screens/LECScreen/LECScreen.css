@@ -1,0 +1,29 @@
+.lec-screen-wrapper {
+  display: grid;
+  height: 90vh;
+  grid-template-columns: 15vw 1fr 15vw;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-column: 2 / 3;
+  width: 100%;
+  background: white;
+  grid-template-rows: 20% 5% 1fr;
+}
+
+.main-content {
+}
+
+.content-header {
+}
+
+.content-header > img {
+  height: 100%;
+  width: 100%;
+}
+
+.sub-nav-links {
+  background: pink;
+}
+
