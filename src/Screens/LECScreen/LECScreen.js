@@ -9,7 +9,12 @@ class LECScreen extends Component {
     super(props);
     this.state = {
       matches: [],
-      rosters: []
+      rosters: [],
+      buttons: {
+        informationIsActive: 'active',
+        teamsIsActive: 'inactive',
+        standingsIsActive: 'inactive'
+      }
     }
     this.upcomingMatches();
   }
@@ -21,10 +26,9 @@ class LECScreen extends Component {
 
         this.setState({ matches: res })
         this.setState({ rosters: res.next_series.rosters })
-
-
       })
   }
+
   render() {
 
     return (
@@ -60,6 +64,8 @@ class LECScreen extends Component {
           {/* <Card.Group centered>
             {this.state.rosters.map((team, i) => (<MatchComponent key={i} team={this.state.rosters[i]} />))}
           </Card.Group> */}
+        </div>
+        <div className="main-content">
         </div>
       </div>
     </div>
