@@ -92,8 +92,9 @@ class LECScreen extends Component {
           </div>
 
           <div className="main-content">
-            {activePage === 'Standings' &&
-              <StandingsComponent />}
+            {activePage === 'Standings' && 
+              <StandingsComponent rosters={rosters}/>
+            }
             {activePage === 'Teams' &&
               <Card.Group centered >
                 {Teams.map((team, i) => (<TeamComponent key={i} team={Teams[i]} />))}

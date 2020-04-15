@@ -33,5 +33,9 @@ nav {
 .home-nav-button:hover {
   transition: 1s;
   color: yellow;
+}
 
+.app-header > img {
+  height: 80px;
+  width: 60px;
 }

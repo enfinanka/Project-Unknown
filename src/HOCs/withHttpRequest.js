@@ -44,7 +44,6 @@ export default function withHttpRequests(WrappedComponent) {
         .then(res => res.json())
     }
 
-
     getTournaments = async (id) => {
       const url = "https://api.abiosgaming.com/v2/tournaments/";
       const queryString = `${id}?&page=1&access_token=`

@@ -5,6 +5,7 @@ import HomeScreen from './Screens/HomeScreen/HomeScreen'
 import './App.css'
 import LECScreen from './Screens/LECScreen/LECScreen'
 import RioEventScreen from './Screens/RioEventScreen/RioEventScreen'
+import ghostLogo from './assets/images/oneGhost.png'
 
 export default function App() {
 
@@ -12,7 +13,8 @@ export default function App() {
 
     <Router>
       <header className="app-header">
-        <h1 style={{ marginBottom: '0' }}>Ghost</h1>
+        <img src={ghostLogo} alt="logo" />
+        <h1 style={{ margin: '0' }}>Ghost</h1>
         <h1 style={{ color: 'yellow', margin: '0' }}>Gaming</h1>
 
         <nav>
