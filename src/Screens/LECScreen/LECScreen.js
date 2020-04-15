@@ -36,6 +36,8 @@ class LECScreen extends Component {
       case '3':
         this.setState({ activePage: 'Standings' })
         break;
+      default:
+        break;
     }
   }
 
@@ -46,7 +48,7 @@ class LECScreen extends Component {
       <div className="lec-screen-wrapper">
         <div className="content-wrapper">
           <div className="content-header">
-            <img src={matches.images && matches.images.banner} />
+            <img src={matches.images && matches.images.banner} alt="banner" />
           </div>
 
           <div className="sub-navbar">
@@ -76,7 +78,7 @@ class LECScreen extends Component {
 
         <div className="main-content">
           {activePage === 'Standings' && 
-          <StandingsComponent />
+          <StandingsComponent rosters={rosters}/>
           }
         </div>
       </div>

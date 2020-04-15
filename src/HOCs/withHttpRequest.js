@@ -44,7 +44,7 @@ export default function withHttpRequests(WrappedComponent) {
         .then(res => res.json())
     }
 
-    getTest = async () => {
+    getFinalMatch = async () => {
       // const url = "https://api.abiosgaming.com/v2/substages/23304?with[]=standings";
       const url = "https://api.abiosgaming.com/v2/series?games[]=2&page=3";
       const queryString = `&page=1&access_token=`

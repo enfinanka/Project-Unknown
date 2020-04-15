@@ -8,7 +8,7 @@
   display: grid;
   grid-column: 2 / 3;
   width: 100%;
-  background: white;
+  background: whitesmoke;
   grid-template-rows: 20% 5% 1fr;
   grid-template-columns: 1fr minmax(186px, 25%);
 }
@@ -39,12 +39,10 @@
 }
 
 .main-content {
-  padding: 20px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
   width: 100%;
-  background: yellow;
-}
-
-.main-content > button {
-  height: 30px;
+  background: whitesmoke;
 }

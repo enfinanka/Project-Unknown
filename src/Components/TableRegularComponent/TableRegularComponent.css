@@ -1,8 +1,9 @@
 .regular-season-table {
-  width: 70%;
-  background: green;
+  width: 40%;
+  /* background: black; */
   display: grid;
   grid-template-rows: repeat(10, 1fr);
   grid-template-columns: 1fr;
   align-items: center;
+  height: 95%;
 }
