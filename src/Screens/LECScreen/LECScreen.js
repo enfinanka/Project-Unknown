@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-
 import { Card, Header, Image, Button } from 'semantic-ui-react';
-import './LECScreen.css'
 
+import './LECScreen.css'
 import TeamComponent from '../../Components/TeamComponent/TeamComponent'
 import withHttpRequests from '../../HOCs/withHttpRequest';
 import StandingsComponent from '../../Components/StandingsComponent/StandingsComponent'
-
+/**
+ * @description screen that render all components for LEC 2020 Spring for League of legends
+ */
 class LECScreen extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,7 @@ class LECScreen extends Component {
       matches: [],
       rosters: [],
       Teams: [],
+      description: '',
       activePage: 'Information'
     }
     this.upcomingMatches();
@@ -31,9 +33,9 @@ class LECScreen extends Component {
   upcomingMatches = () => {
     this.props.getTournaments(4244)
       .then(res => {
-
         this.setState({ matches: res })
         this.setState({ rosters: res.next_series.rosters })
+        this.setState({ description: res.description.replace(/(<([^>]+)>)/ig, "") })
       })
   }
 
@@ -53,10 +55,8 @@ class LECScreen extends Component {
         break;
     }
   }
-
   render() {
-
-    const { matches, rosters, activePage, Teams } = this.state
+    const { matches, rosters, activePage, Teams, description } = this.state
 
     return (
       <div className="lec-screen-wrapper">
@@ -67,7 +67,7 @@ class LECScreen extends Component {
           </div>
 
           <div className="sub-navbar">
-            <Button size="medium" spaced='bottom' id="1" color='black' onClick={this.changeContent}>Information</Button>
+            <Button size="medium" id="1" color='black' onClick={this.changeContent}>Information</Button>
             <Button size="medium" id="2" color='black' onClick={this.changeContent}>Teams</Button>
             <Button size="medium" id="3" color='black' onClick={this.changeContent}>Standings</Button>
           </div>
@@ -89,18 +89,16 @@ class LECScreen extends Component {
                 </Header>
               </Card.Content>
             </Card>
-            {/* <Card.Group centered>
-            {this.state.rosters.map((team, i) => (<MatchComponent key={i} team={this.state.rosters[i]} />))}
-          </Card.Group> */}
           </div>
+
           <div className="main-content">
             {activePage === 'Standings' &&
-              <StandingsComponent />
-            }
+              <StandingsComponent />}
             {activePage === 'Teams' &&
               <Card.Group centered >
                 {Teams.map((team, i) => (<TeamComponent key={i} team={Teams[i]} />))}
               </Card.Group>}
+            {activePage === 'Information' && description}
           </div>
         </div>
       </div>

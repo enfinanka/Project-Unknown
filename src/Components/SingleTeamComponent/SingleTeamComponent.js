@@ -4,6 +4,11 @@ import { Image, Card, } from 'semantic-ui-react'
 import './SingleTeamComponent.css'
 import PlayerComponent from '../PlayerComponent/PlayerComponent';
 
+/**
+ * 
+ * @description  replace teamComponent and render a bigger card with more specific data from the team
+ */
+
 export default function SingleTeamComponent(props) {
 
   const { TeamInfo } = props;
@@ -29,5 +34,4 @@ export default function SingleTeamComponent(props) {
       </Card.Content>
     </Card>
   )
-
 }

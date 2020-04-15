@@ -1,12 +1,13 @@
 import React, { } from 'react'
 import { Card, Feed, Header, Image, Icon } from 'semantic-ui-react'
 
+/**
+ * 
+ * @description render all players and specific info in singelteamComponent
+ */
 
 export default function PlayerComponent(props) {
   const { playerInfo } = props;
-
-  console.log(playerInfo);
-
   return (
     <Card>
       <Card.Content>

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-export default function withHttpRequests(WrappedComponent) {
+/**
+ * 
+ * @description handeling all request from the abios api
+ */
 
+export default function withHttpRequests(WrappedComponent) {
   return class extends Component {
     constructor(props) {
       super(props);
-
       this.getToken(true);
-     
-
-
     }
 
     getToken = async (force) => {
@@ -22,7 +22,6 @@ export default function withHttpRequests(WrappedComponent) {
       return fetch('https://api.abiosgaming.com/v2/oauth/access_token', {
         method: 'POST',
         body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
-
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         }
@@ -64,8 +63,6 @@ export default function withHttpRequests(WrappedComponent) {
       return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
         .then(res => res.json())
     }
-
-
 
     render() {
       return (

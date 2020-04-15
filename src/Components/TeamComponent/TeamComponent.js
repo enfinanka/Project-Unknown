@@ -5,7 +5,9 @@ import './TeamComponent.css'
 import withHttpRequests from '../../HOCs/withHttpRequest'
 import SingleTeamComponent from '../SingleTeamComponent/SingleTeamComponent'
 
-
+/**
+ * @ render cards with info for all teams in the tournament
+ */
 
 class TeamComponent extends Component {
   constructor(props) {
@@ -17,13 +19,11 @@ class TeamComponent extends Component {
   }
 
   getTeamInfo = () => {
-
     if (this.state.Show === true) {
       this.setState({ Show: false })
     } else {
       this.setState({ Show: true })
     }
-
     this.props.getTeam(this.props.team.id)
       .then(res => {
         this.setState({ TeamInfo: res })
@@ -32,10 +32,11 @@ class TeamComponent extends Component {
 
   render() {
     const { team } = this.props;
+    const { Show, TeamInfo } = this.state;
     return (
       <Fragment>
-        <div className={this.state.Show ? 'card' : 'card2'}>
-          {this.state.Show ?
+        <div className={Show ? 'card' : 'card2'}>
+          {Show ?
             <Card raised>
               <Card.Content>
                 <Card.Header>{team.name}<Image className='logo' size='tiny' src={team.images.default} alt='logo' /></Card.Header>
@@ -53,14 +54,10 @@ class TeamComponent extends Component {
                 </Card.Description>
               </Card.Content>
             </Card>
-            : <SingleTeamComponent TeamInfo={this.state.TeamInfo} />}
-          <Button color='teal' fluid onClick={this.getTeamInfo}>{this.state.Show ? 'More Info' : 'Close'}</Button>
+            : <SingleTeamComponent TeamInfo={TeamInfo} />}
+          <Button color='teal' fluid onClick={this.getTeamInfo}>{Show ? 'More Info' : 'Close'}</Button>
         </div>
       </Fragment>
-
-
-
-
     )
   }
 }
