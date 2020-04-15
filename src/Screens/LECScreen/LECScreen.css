@@ -31,6 +31,10 @@
   width: 100%;
 }
 
+.content-header > div {
+  margin: auto;
+}
+
 .sub-navbar {
   display: flex;
   justify-content: center;
@@ -38,3 +42,8 @@
   grid-column: 1 / 3;
 }
 
+.main-content {
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-right: 20px;
+}

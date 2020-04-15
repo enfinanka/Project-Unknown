@@ -23,7 +23,7 @@ class LECScreen extends Component {
   upcomingMatches = () => {
     this.props.getMatches()
       .then(res => {
-        console.log('lecscreen',res);
+        // console.log('lecscreen',res);
         
 
         this.setState({ matches: res })
@@ -39,7 +39,6 @@ class LECScreen extends Component {
           <div className="content-header">
             <img src={this.state.matches.images && this.state.matches.images.banner} />
           </div>
-          <LecInfoComponent matches={this.state.matches}/>
           <div className="sub-navbar">
             <Button size="medium" basic color='black'>Information</Button>
             <Button size="medium" basic color='black'>Teams</Button>
@@ -68,6 +67,7 @@ class LECScreen extends Component {
           </Card.Group> */}
         </div>
         <div className="main-content">
+        <LecInfoComponent matches={this.state.matches}/>
           <p></p>
         </div>
       </div>
