@@ -2,3 +2,9 @@
   position: absolute;
   left: 20px;
 }
+.card{
+  padding: 10px;
+}
+.card2{
+  width: 90%;
+}

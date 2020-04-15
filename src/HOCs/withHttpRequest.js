@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
-export default function withHttpRequests(WrappedComponent) {
+/**
+ * 
+ * @description handeling all request from the abios api
+ */
 
+export default function withHttpRequests(WrappedComponent) {
   return class extends Component {
     constructor(props) {
       super(props);
-
       this.getToken(true);
-
     }
 
     getToken = async (force) => {
@@ -20,14 +22,11 @@ export default function withHttpRequests(WrappedComponent) {
       return fetch('https://api.abiosgaming.com/v2/oauth/access_token', {
         method: 'POST',
         body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
-
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         }
       }).then(res => res.json())
         .then((res) => {
-          console.log('körs');
-
           sessionStorage.setItem('token', res.access_token)
           setTimeout(() => {
             sessionStorage.removeItem('token')
@@ -36,15 +35,25 @@ export default function withHttpRequests(WrappedComponent) {
         })
     }
 
-
-    getMatches = async () => {
-      const url = "https://api.abiosgaming.com/v2/tournaments/4244";
-      const queryString = `&page=1&access_token=`
+    getTeam = async (id) => {
+      const url = "https://api.abiosgaming.com/v2/teams/";
+      const queryString = `${id}?&page=1&access_token=`
 
       if (!sessionStorage.getItem('token')) await this.getToken(false);
-      return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
+      return fetch(`${url}${queryString}` + sessionStorage.getItem('token'))
         .then(res => res.json())
     }
+
+
+    getTournaments = async (id) => {
+      const url = "https://api.abiosgaming.com/v2/tournaments/";
+      const queryString = `${id}?&page=1&access_token=`
+
+      if (!sessionStorage.getItem('token')) await this.getToken(false);
+      return fetch(`${url}${queryString}` + sessionStorage.getItem('token'))
+        .then(res => res.json())
+    }
+
 
     getTeams = async (game, tournament, page) => {
       const url = "https://api.abiosgaming.com/v2/teams";
@@ -53,16 +62,14 @@ export default function withHttpRequests(WrappedComponent) {
       if (!sessionStorage.getItem('token')) await this.getToken(false);
       return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
         .then(res => res.json())
-
     }
-
-
 
     render() {
       return (
         <WrappedComponent
           getTeams={this.getTeams}
-          getMatches={this.getMatches}
+          getTournaments={this.getTournaments}
+          getTeam={this.getTeam}
           {...this.props}
         />
       )
