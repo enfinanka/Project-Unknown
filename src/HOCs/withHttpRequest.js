@@ -26,8 +26,6 @@ export default function withHttpRequests(WrappedComponent) {
         }
       }).then(res => res.json())
         .then((res) => {
-          console.log('körs');
-
           sessionStorage.setItem('token', res.access_token)
           setTimeout(() => {
             sessionStorage.removeItem('token')
@@ -37,12 +35,22 @@ export default function withHttpRequests(WrappedComponent) {
     }
 
 
-    getMatches = async () => {
+    getTournaments = async () => {
       const url = "https://api.abiosgaming.com/v2/tournaments/4244";
       const queryString = `&page=1&access_token=`
 
       if (!sessionStorage.getItem('token')) await this.getToken(false);
       return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
+        .then(res => res.json())
+    }
+
+    getTest = async () => {
+      // const url = "https://api.abiosgaming.com/v2/substages/23304?with[]=standings";
+      const url = "https://api.abiosgaming.com/v2/series?games[]=2&page=3";
+      const queryString = `&page=1&access_token=`
+
+      if (!sessionStorage.getItem('token')) await this.getToken(false);
+      return fetch(`${url}${queryString}` + sessionStorage.getItem('token'))
         .then(res => res.json())
     }
 
@@ -53,7 +61,6 @@ export default function withHttpRequests(WrappedComponent) {
       if (!sessionStorage.getItem('token')) await this.getToken(false);
       return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
         .then(res => res.json())
-
     }
 
 
@@ -62,7 +69,8 @@ export default function withHttpRequests(WrappedComponent) {
       return (
         <WrappedComponent
           getTeams={this.getTeams}
-          getMatches={this.getMatches}
+          getTournaments={this.getTournaments}
+          getTest={this.getTest}
           {...this.props}
         />
       )

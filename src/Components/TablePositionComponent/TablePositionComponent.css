@@ -1,0 +1,7 @@
+.single-team {
+  display: flex;
+}
+
+.single-team > h2 {
+  margin: 0;
+}
