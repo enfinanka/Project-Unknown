@@ -67,7 +67,7 @@ class LECScreen extends Component {
           </div>
 
           <div className="sub-navbar">
-            <Button size="medium" id="1" color='black' onClick={this.changeContent}>Information</Button>
+            <Button size="medium" spaced='bottom' id="1" color='black' onClick={this.changeContent}>Information</Button>
             <Button size="medium" id="2" color='black' onClick={this.changeContent}>Teams</Button>
             <Button size="medium" id="3" color='black' onClick={this.changeContent}>Standings</Button>
           </div>
