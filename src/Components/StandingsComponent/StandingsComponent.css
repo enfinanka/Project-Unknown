@@ -1,0 +1,20 @@
+.standings-btn-group {
+  margin: 20px auto;
+}
+
+.standings-btn-group > button {
+  margin: 0 auto;
+  padding: 12px;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 4px;
+  background: #00b5ad;
+  color: #383e40;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.standings-btn-group > button:hover {
+  transition: 0.5s;
+  background: #95bcc7;
+}
