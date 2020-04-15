@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react'
-import TablePositionComponent from '../TablePositionComponent/TablePositionComponent'
+import TabSingleTeamComponent from '../TabSingleTeamComponent/TabSingleTeamComponent'
 
 import './TableRegularComponent.css'
 import fnaticLogo from '../../assets/images/teams/fnatic.svg'
@@ -24,16 +24,16 @@ export default class TableRegularComponent extends Component {
     return (
       <Fragment>
         <div className="regular-season-table">
-          <TablePositionComponent placing={1} teamname={'G2 Esports'} winratio={'15-3'} logo={g2Logo} />
-          <TablePositionComponent placing={2} teamname={'Fnatic'} winratio={'13-5'} logo={fnaticLogo} />
-          <TablePositionComponent placing={3} teamname={'Origen'} winratio={'13-5'} logo={origenLogo}/>
-          <TablePositionComponent placing={4} teamname={'MAD Lions'} winratio={'11-7'} logo={madlionsLogo}/>
-          <TablePositionComponent placing={5} teamname={'Misfits'} winratio={'10-8'} logo={misfitsLogo} />
-          <TablePositionComponent placing={6} teamname={'Rogue'} winratio={'9-9'} logo={rogueLogo} />
-          <TablePositionComponent placing={7} teamname={'Excel Esports'} winratio={'7-11'} logo={excelLogo} />
-          <TablePositionComponent placing={8} teamname={'Schalke 04'} winratio={'6-12'} logo={schalkeLogo}/>
-          <TablePositionComponent placing={9} teamname={'SK Gaming'} winratio={'4-14'} logo={skLogo}/>
-          <TablePositionComponent placing={10} teamname={'Team Vitality'} winratio={'2-16'} logo={vitalityLogo}/>
+          <TabSingleTeamComponent placing={1} teamname={'G2 Esports'} winratio={'15-3'} logo={g2Logo} />
+          <TabSingleTeamComponent placing={2} teamname={'Fnatic'} winratio={'13-5'} logo={fnaticLogo} />
+          <TabSingleTeamComponent placing={3} teamname={'Origen'} winratio={'13-5'} logo={origenLogo}/>
+          <TabSingleTeamComponent placing={4} teamname={'MAD Lions'} winratio={'11-7'} logo={madlionsLogo}/>
+          <TabSingleTeamComponent placing={5} teamname={'Misfits'} winratio={'10-8'} logo={misfitsLogo} />
+          <TabSingleTeamComponent placing={6} teamname={'Rogue'} winratio={'9-9'} logo={rogueLogo} />
+          <TabSingleTeamComponent placing={7} teamname={'Excel Esports'} winratio={'7-11'} logo={excelLogo} />
+          <TabSingleTeamComponent placing={8} teamname={'Schalke 04'} winratio={'6-12'} logo={schalkeLogo}/>
+          <TabSingleTeamComponent placing={9} teamname={'SK Gaming'} winratio={'4-14'} logo={skLogo}/>
+          <TabSingleTeamComponent placing={10} teamname={'Team Vitality'} winratio={'2-16'} logo={vitalityLogo}/>
         </div>
       </Fragment>
     )

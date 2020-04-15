@@ -1,6 +1,11 @@
 import React from 'react'
 
-import './TablePositionComponent.css'
+import './TabSingleTeamComponent.css'
+
+/**
+ * @desc Single team tab used in the standings table. 
+ *
+ */
 
 export default function TablePositionComponent(props) {
   const { placing, teamname, winratio, logo } = props

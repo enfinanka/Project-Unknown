@@ -1,6 +1,5 @@
 .regular-season-table {
-  width: 40%;
-  /* background: black; */
+  width:100%;
   display: grid;
   grid-template-rows: repeat(10, 1fr);
   grid-template-columns: 1fr;

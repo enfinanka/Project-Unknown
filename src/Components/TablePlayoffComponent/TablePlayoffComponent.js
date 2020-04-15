@@ -3,6 +3,7 @@ import { Card } from 'semantic-ui-react';
 
 import withHttpRequests from '../../HOCs/withHttpRequest';
 import MatchComponent from '../MatchComponent/MatchComponent'
+import './TablePlayoffComponent.css'
 
 class TablePlayoffComponent extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class TablePlayoffComponent extends Component {
   }
 
   fetchRosters = () => {
-    this.props.getTournaments()
+    this.props.getTournaments(4244)
     .then(res => {
       this.setState({ matches: res })
       this.setState({ rosters: res.next_series.rosters })
@@ -30,13 +31,13 @@ class TablePlayoffComponent extends Component {
     const { matches, rosters } = this.state
 
     return (
-      <Fragment>
-        <h2>Semi-Final</h2>
+      <div className="standings-wrapper">
+        <h2>{matches.next_series && matches.next_series.title}</h2>
         {matches.next_series && matches.next_series.start}
         <Card.Group centered>
           {rosters.map((team, i) => (<MatchComponent key={i} team={rosters[i]} />))}
         </Card.Group>
-      </Fragment>
+      </div>
     )
   }
 }
