@@ -6,9 +6,6 @@ import './LECScreen.css'
 import TeamComponent from '../../Components/TeamComponent/TeamComponent'
 import withHttpRequests from '../../HOCs/withHttpRequest';
 
-
-
-
 class LECScreen extends Component {
   constructor(props) {
     super(props);
@@ -30,26 +27,22 @@ class LECScreen extends Component {
       .then(res => {
         this.setState({
           Teams: [...res.data]
-          
         })
       })
   }
 
   upcomingMatches = () => {
-    this.props.getTournaments()
+    this.props.getTournaments(4244)
       .then(res => {
-
         this.setState({ matches: res })
         this.setState({ rosters: res.next_series.rosters })
-
-
       })
   }
-  render() {
 
+  render() {
     return (
       <div className="lec-screen-wrapper">
-        <img alt='background' src='https://cdn.shopify.com/s/files/1/0070/6661/5861/files/Featured_product_backgroud_image_1800x.jpg?v=1552502823' />
+        {<img className='background-picture' alt='background' src='https://cdn.shopify.com/s/files/1/0070/6661/5861/files/Featured_product_backgroud_image_1800x.jpg?v=1552502823' />}
         <div className="content-wrapper">
           <div className="content-header">
             <img alt='banner' src={this.state.matches.images && this.state.matches.images.banner} />
@@ -83,12 +76,9 @@ class LECScreen extends Component {
           </Card.Group> */}
           </div>
           <div className='main-content'>
-
             <Card.Group centered >
               {this.state.Teams.map((team, i) => (<TeamComponent key={i} team={this.state.Teams[i]} />))}
             </Card.Group>
-
-
           </div>
         </div>
       </div>

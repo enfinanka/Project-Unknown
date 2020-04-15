@@ -19,18 +19,12 @@ export default function PlayerComponent(props) {
                 && playerInfo.social_media_accounts[1].url}><Icon spaced='left' size='big' name='twitch' /></a></Card.Meta>
               <Feed.Summary>
                 <p>Roles: {playerInfo.roles[0] && playerInfo.roles[0].name}</p>
-                <p>From: {playerInfo.roles[0] && playerInfo.roles[0].from}</p>
+                <p>Since: {playerInfo.roles[0] && playerInfo.roles[0].from}</p>
               </Feed.Summary>
             </Feed.Content>
           </Feed.Event>
         </Feed>
       </Card.Content>
     </Card>
-
-
-
-
-
-
   )
 }

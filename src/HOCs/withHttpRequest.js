@@ -46,12 +46,12 @@ export default function withHttpRequests(WrappedComponent) {
     }
 
 
-    getTournaments = async () => {
-      const url = "https://api.abiosgaming.com/v2/tournaments/4244";
-      const queryString = `&page=1&access_token=`
+    getTournaments = async (id) => {
+      const url = "https://api.abiosgaming.com/v2/tournaments/";
+      const queryString = `${id}?&page=1&access_token=`
 
       if (!sessionStorage.getItem('token')) await this.getToken(false);
-      return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
+      return fetch(`${url}${queryString}` + sessionStorage.getItem('token'))
         .then(res => res.json())
     }
 

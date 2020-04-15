@@ -5,6 +5,10 @@
   justify-content: center;
   align-items: center;
   color: white;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: black;
 }
 
 nav {
@@ -12,17 +16,22 @@ nav {
   right: 0;
   margin-right: 30px;
   font-size: 1.5em;
+  z-index: 10;
+ 
 }
 
 .yellow-heading {
   color: yellow;
+ 
 }
 
 .home-nav-button {
   color: white;
+
 }
 
 .home-nav-button:hover {
   transition: 1s;
   color: yellow;
+
 }
