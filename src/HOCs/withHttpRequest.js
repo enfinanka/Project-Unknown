@@ -55,6 +55,7 @@ export default function withHttpRequests(WrappedComponent) {
         .then(res => res.json())
     }
 
+
     getTeams = async (game, tournament, page) => {
       const url = "https://api.abiosgaming.com/v2/teams";
       const queryString = `?with[]game=${game}&tournaments[]=${tournament}&page=${page}&access_token=`
@@ -62,7 +63,6 @@ export default function withHttpRequests(WrappedComponent) {
       if (!sessionStorage.getItem('token')) await this.getToken(false);
       return fetch(`${url}?${queryString}` + sessionStorage.getItem('token'))
         .then(res => res.json())
-
     }
 
 

@@ -3,7 +3,7 @@
   height: 90vh;
   grid-template-columns: 15vw 1fr 15vw;
   z-index: 2;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .content-wrapper {
@@ -50,3 +50,7 @@
   width: 100%;
   height: 100%;
 } 
+
+.main-content > button {
+  height: 30px;
+}
