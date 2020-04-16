@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
-import { Card, Header, Image, Button } from 'semantic-ui-react';
+import { Card, Header, Image, Button, Icon } from 'semantic-ui-react';
 
 import './LECScreen.css'
+import lecInfoImage from '../../assets/images/lecinfoimage.png';
 import TeamComponent from '../../Components/TeamComponent/TeamComponent'
 import withHttpRequests from '../../HOCs/withHttpRequest';
-<<<<<<< HEAD
-import LecInfoComponent from '../../Components/LecInfoComponent/LecInfoComponent';
-
-=======
 import StandingsComponent from '../../Components/StandingsComponent/StandingsComponent'
+import LecInfoComponent from '../../Components/LecInfoComponent/LecInfoComponent';
 /**
  * @description screen that render all components for LEC 2020 Spring for League of legends
  */
->>>>>>> 936052839d0a790d1ef6b7cd19dd9f107b6c52af
 class LECScreen extends Component {
   constructor(props) {
     super(props);
@@ -24,21 +21,18 @@ class LECScreen extends Component {
       activePage: 'Information'
     }
     this.upcomingMatches();
+    
+
   }
 
   tournamentTeams = () => {
     this.props.getTeams(2, 4244, 1)
       .then(res => {
-<<<<<<< HEAD
-        // console.log('lecscreen',res);
-        
-=======
         this.setState({
           Teams: [...res.data]
         })
       })
   }
->>>>>>> 936052839d0a790d1ef6b7cd19dd9f107b6c52af
 
   upcomingMatches = () => {
     this.props.getTournaments(4244)
@@ -67,7 +61,6 @@ class LECScreen extends Component {
   }
   render() {
     const { matches, rosters, activePage, Teams, description } = this.state
-
     return (
       <div className="lec-screen-wrapper">
         {<img className='background-picture' alt='background' src='https://cdn.shopify.com/s/files/1/0070/6661/5861/files/Featured_product_backgroud_image_1800x.jpg?v=1552502823' />}
@@ -82,37 +75,13 @@ class LECScreen extends Component {
           </div>
 
           <div className="next-match-wrapper">
-<<<<<<< HEAD
-            <h2 style={{marginBottom: '0px'}}>Next Match</h2>
-            <Header sub size='huge' textAlign='center'>
-              <p>{this.state.matches.next_series && this.state.matches.next_series.start}</p>
-=======
             <h1 style={{ marginBottom: '0px' }}>Next Match</h1>
             <Header sub size='huge' textAlign='center'>
               {matches.next_series && matches.next_series.start}
->>>>>>> 936052839d0a790d1ef6b7cd19dd9f107b6c52af
             </Header>
 
             <Card>
               <Card.Content>
-<<<<<<< HEAD
-                <Header textAlign='center' size="small">
-                {this.state.rosters[0] && this.state.rosters[1].teams[0].short_name}
-                <Image spaced="right" size='large' src={this.state.rosters[1] && this.state.rosters[1].teams[0].images.default} />
-                  VS
-                <Image spaced="left" size='large' src={this.state.rosters[0] && this.state.rosters[0].teams[0].images.default} />
-                {this.state.rosters[0] && this.state.rosters[0].teams[0].short_name}
-                </Header>
-              </Card.Content>
-            </Card>
-          {/* <Card.Group centered>
-            {this.state.rosters.map((team, i) => (<MatchComponent key={i} team={this.state.rosters[i]} />))}
-          </Card.Group> */}
-        </div>
-        <div className="main-content">
-        <LecInfoComponent matches={this.state.matches}/>
-          <p></p>
-=======
                 <Header textAlign='center'>
                   {rosters[0] && rosters[1].teams[0].short_name}
                   <Image spaced="right" size='massive' src={rosters[1] && this.state.rosters[1].teams[0].images.default} />
@@ -125,6 +94,7 @@ class LECScreen extends Component {
           </div>
 
           <div className="main-content">
+            <LecInfoComponent />
             {activePage === 'Standings' && 
               <StandingsComponent rosters={rosters}/>
             }
@@ -132,9 +102,22 @@ class LECScreen extends Component {
               <Card.Group centered >
                 {Teams.map((team, i) => (<TeamComponent key={i} team={Teams[i]} />))}
               </Card.Group>}
-            {activePage === 'Information' && description}
+            {activePage === 'Information' && 
+            <div>
+              <img src={lecInfoImage} class="ui large rounded image" />
+              <div className="info">
+                <Icon className="info-icon" size="large" inverted color='black' name='map marker alternate' />
+                <p className="tournament-ptag">{this.state.matches.country && this.state.matches.country.name}</p>
+                <p className="space-api">, </p>
+                <p className="tournament-ptag">{this.state.matches.city}</p>
+                <Icon className="infoIcon" size="large" inverted color='black' name='users' />
+                <p className="tournament-ptag">{this.state.matches.game && this.state.matches.game.default_lineup_size}</p>
+                <p className="space-api-vs">VS</p>
+                <p className="tournament-ptag">{this.state.matches.game && this.state.matches.game.default_lineup_size}</p>
+              </div>
+              {this.state.description}
+            </div>}
           </div>
->>>>>>> 936052839d0a790d1ef6b7cd19dd9f107b6c52af
         </div>
       </div>
     )

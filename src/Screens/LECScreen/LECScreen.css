@@ -48,12 +48,6 @@
   grid-column: 1 / 3;
 }
 
-<<<<<<< HEAD
-.main-content {
-  margin-left: 30px;
-  margin-top: 20px;
-  margin-right: 20px;
-=======
 .background-picture{
   position: fixed;
   z-index: 1;
@@ -73,5 +67,22 @@
   padding: 20px;
   width: 100%;
   background: whitesmoke;
->>>>>>> 936052839d0a790d1ef6b7cd19dd9f107b6c52af
+}
+.info {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.space-api {
+  margin-right: 5px;
+  margin-left: 0px;
+}
+.space-api-vs {
+  margin-top: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 12px;
+
 }
