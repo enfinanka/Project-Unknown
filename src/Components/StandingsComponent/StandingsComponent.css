@@ -1,9 +1,8 @@
 .standings-btn-group {
-  margin: 20px auto;
+  margin-bottom: 20px;
 }
 
 .standings-btn-group > button {
-  margin: 0 auto;
   padding: 12px;
   margin-right: 10px;
   border: 0;
