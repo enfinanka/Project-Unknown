@@ -63,10 +63,10 @@
 .main-content {
   display: flex;
   flex-direction: column;
-
   padding: 20px;
   width: 100%;
   background: whitesmoke;
+<<<<<<< HEAD
 }
 .info {
   margin-top: 5px;
@@ -85,4 +85,6 @@
   margin-right: 5px;
   font-size: 12px;
 
+=======
+>>>>>>> fc58a31fbf309a2adad8ae2dc031882b3a4b45d1
 }
