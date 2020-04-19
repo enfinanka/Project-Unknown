@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 /**
  * 
  * @description handeling all request from the abios api
+ * @function getToken fetches the access token and put it in sessionStorage, when the the token is fetch a timeout will check remaning 
+ * time on the token and fetch a new token before the time runs out. This dont work perfect because  the timeout will stop if you change 
+ * screen. So i have to fetch a token every time a request is made.
  * @author Joel
  */
 
