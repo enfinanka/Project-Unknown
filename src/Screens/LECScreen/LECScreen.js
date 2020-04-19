@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Header, Image, Button, Icon } from 'semantic-ui-react';
+import { Card, Header, Image, Button } from 'semantic-ui-react';
 
 import './LECScreen.css'
 import TeamComponent from '../../Components/TeamComponent/TeamComponent'
@@ -17,7 +17,6 @@ class LECScreen extends Component {
       matches: [],
       rosters: [],
       Teams: [],
-      description: '',
       country: [],
       activePage: 'Information'
     }
@@ -40,7 +39,6 @@ class LECScreen extends Component {
       .then(res => {
         this.setState({ matches: res })
         this.setState({ rosters: res.next_series.rosters })
-        this.setState({ description: res.description.replace(/(<([^>]+)>)/ig, "") })
       })
   }
 
@@ -61,7 +59,7 @@ class LECScreen extends Component {
     }
   }
   render() {
-    const { matches, rosters, activePage, Teams, description } = this.state
+    const { matches, rosters, activePage, Teams } = this.state
     return (
       <div className="lec-screen-wrapper">
         {<img className='background-picture' alt='bg-colored' src='https://cdn.shopify.com/s/files/1/0070/6661/5861/files/Featured_product_backgroud_image_1800x.jpg?v=1552502823' />}

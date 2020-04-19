@@ -3,12 +3,17 @@ import { Card, Image, } from 'semantic-ui-react';
 
 import './MatchComponent.css'
 
+/**
+ * Render all players from the upcoming match
+ * @author Joel
+ */
+
 export default class MatchComponent extends Component {
   render() {
     
     return (
 
-      <Card className='test'>
+      <Card>
         <Card.Content >
           <Card.Header textAlign='center'>{this.props.team.teams[0].name}<Image spaced='left' src={this.props.team.teams[0].images.thumbnail} alt='flag' /></Card.Header>
         </Card.Content>

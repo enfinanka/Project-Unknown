@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 
 import withHttpRequests from '../../HOCs/withHttpRequest'
 import { Icon } from 'semantic-ui-react'
@@ -15,7 +15,7 @@ import lecInfoImage from '../../assets/images/lecinfoimage.png';
     return (
 
       <Fragment>
-        <img src={lecInfoImage} class="ui large rounded image" />
+        <img src={lecInfoImage} alt='lec infoimage' class="ui large rounded image" />
         <div className="info">
           <Icon className="info-icon" size="large" inverted color='black' name='map marker alternate' />
           <p className="tournament-ptag">{matches.country && matches.country.name}</p>

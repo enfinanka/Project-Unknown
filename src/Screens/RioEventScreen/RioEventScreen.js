@@ -4,7 +4,6 @@
 //   render() {
 //     return (
 //       <div className="rio-event-wrapper">
-//         <p>Hej</p>
 //       </div>
 //     )
 //   }
