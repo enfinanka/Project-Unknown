@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Card, Header, Image, Button } from 'semantic-ui-react';
+import { Card, Header, Image, Button, Icon } from 'semantic-ui-react';
 
 import './LECScreen.css'
+import lecInfoImage from '../../assets/images/lecinfoimage.png';
 import TeamComponent from '../../Components/TeamComponent/TeamComponent'
 import withHttpRequests from '../../HOCs/withHttpRequest';
 import StandingsComponent from '../../Components/StandingsComponent/StandingsComponent'
+import LecInfoComponent from '../../Components/LecInfoComponent/LecInfoComponent';
 /**
  * @description screen that render all components for LEC 2020 Spring for League of Legends
  * @author Ted, Joel
@@ -20,6 +22,8 @@ class LECScreen extends Component {
       activePage: 'Information'
     }
     this.upcomingMatches();
+    
+
   }
 
   tournamentTeams = () => {
@@ -58,7 +62,6 @@ class LECScreen extends Component {
   }
   render() {
     const { matches, rosters, activePage, Teams, description } = this.state
-
     return (
       <div className="lec-screen-wrapper">
         {<img className='background-picture' alt='background' src='https://cdn.shopify.com/s/files/1/0070/6661/5861/files/Featured_product_backgroud_image_1800x.jpg?v=1552502823' />}
@@ -66,7 +69,6 @@ class LECScreen extends Component {
           <div className="content-header">
             <img src={matches.images && matches.images.banner} alt="banner" />
           </div>
-
           <div className="sub-navbar">
             <Button size="medium" id="1" color='black' onClick={this.changeContent}>Information</Button>
             <Button size="medium" id="2" color='black' onClick={this.changeContent}>Teams</Button>
@@ -93,6 +95,7 @@ class LECScreen extends Component {
           </div>
 
           <div className="main-content">
+            <LecInfoComponent />
             {activePage === 'Standings' && 
               <StandingsComponent rosters={rosters}/>
             }
@@ -100,7 +103,21 @@ class LECScreen extends Component {
               <Card.Group centered >
                 {Teams.map((team, i) => (<TeamComponent key={i} team={Teams[i]} />))}
               </Card.Group>}
-            {activePage === 'Information' && description}
+            {activePage === 'Information' && 
+            <div>
+              <img src={lecInfoImage} class="ui large rounded image" />
+              <div className="info">
+                <Icon className="info-icon" size="large" inverted color='black' name='map marker alternate' />
+                <p className="tournament-ptag">{this.state.matches.country && this.state.matches.country.name}</p>
+                <p className="space-api">, </p>
+                <p className="tournament-ptag">{this.state.matches.city}</p>
+                <Icon className="infoIcon" size="large" inverted color='black' name='users' />
+                <p className="tournament-ptag">{this.state.matches.game && this.state.matches.game.default_lineup_size}</p>
+                <p className="space-api-vs">VS</p>
+                <p className="tournament-ptag">{this.state.matches.game && this.state.matches.game.default_lineup_size}</p>
+              </div>
+              {this.state.description}
+            </div>}
           </div>
         </div>
       </div>
