@@ -6,7 +6,8 @@ import TeamComponent from '../../Components/TeamComponent/TeamComponent'
 import withHttpRequests from '../../HOCs/withHttpRequest';
 import StandingsComponent from '../../Components/StandingsComponent/StandingsComponent'
 /**
- * @description screen that render all components for LEC 2020 Spring for League of legends
+ * @description screen that render all components for LEC 2020 Spring for League of Legends
+ * @author Ted, Joel
  */
 class LECScreen extends Component {
   constructor(props) {

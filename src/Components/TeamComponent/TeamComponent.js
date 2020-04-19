@@ -6,7 +6,8 @@ import withHttpRequests from '../../HOCs/withHttpRequest'
 import SingleTeamComponent from '../SingleTeamComponent/SingleTeamComponent'
 
 /**
- * @ render cards with info for all teams in the tournament
+ * @desc render cards with info for all teams in the tournament.
+ * @author Joel
  */
 
 class TeamComponent extends Component {

@@ -5,6 +5,11 @@ import withHttpRequests from '../../HOCs/withHttpRequest';
 import MatchComponent from '../MatchComponent/MatchComponent'
 import './TablePlayoffComponent.css'
 
+/**
+ * @desc Renders the next playoff game.
+ * @author Ted
+ */
+
 class TablePlayoffComponent extends Component {
   constructor(props) {
     super(props)

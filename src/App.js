@@ -7,6 +7,11 @@ import LECScreen from './Screens/LECScreen/LECScreen'
 import RioEventScreen from './Screens/RioEventScreen/RioEventScreen'
 import ghostLogo from './assets/images/oneGhost.png'
 
+/**
+ * @desc Sets up the routing for the application.
+ * @author Ted, Joel
+ */
+
 export default function App() {
 
   return (

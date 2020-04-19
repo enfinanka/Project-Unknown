@@ -5,6 +5,11 @@ import TableRegularComponent from '../TableRegularComponent/TableRegularComponen
 import './StandingsComponent.css'
 import TablePlayoffComponent from '../TablePlayoffComponent/TablePlayoffComponent'
 
+/**
+ * @desc The entire standings "screen". Changes information based on what button was clicked.
+ * @author Ted
+ */
+
 class StandingsComponent extends Component {
   constructor(props) {
     super(props)

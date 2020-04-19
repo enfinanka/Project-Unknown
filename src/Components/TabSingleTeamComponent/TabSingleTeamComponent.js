@@ -4,7 +4,7 @@ import './TabSingleTeamComponent.css'
 
 /**
  * @desc Single team tab used in the standings table. 
- *
+ * @author Ted
  */
 
 export default function TablePositionComponent(props) {
