@@ -1,0 +1,28 @@
+.info {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.space-api {
+  margin-right: 5px;
+  margin-left: 0px;
+}
+.space-api-vs {
+  margin-top: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 12px;
+}
+.infoIcon {
+  margin-left: 5px;
+}
+
+.berlin {
+  margin-right: 5px;
+}
+
+.first-number {
+  margin-left: 3px;
+}
