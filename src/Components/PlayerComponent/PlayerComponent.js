@@ -1,4 +1,4 @@
-import React, { } from 'react'
+import React from 'react'
 import { Card, Feed, Header, Image, Icon } from 'semantic-ui-react'
 
 /**

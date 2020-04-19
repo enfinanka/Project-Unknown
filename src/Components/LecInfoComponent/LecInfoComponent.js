@@ -1,11 +1,14 @@
 import React, { Component, Fragment } from 'react'
-import './LecInfoComponent.css';
 
 import withHttpRequests from '../../HOCs/withHttpRequest'
-import { Icon } from 'semantic-ui-react'
+import './LecInfoComponent.css';
+
+/**
+ * @desc 
+ * @author Elin
+ */
 
 class LecInfoComponent extends Component {
-
 
   render(props) {
     // console.log('leccomp', this.props.matches.country && this.props.matches.contry.region)

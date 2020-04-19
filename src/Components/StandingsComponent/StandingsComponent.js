@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
+
 import withHttpRequests from '../../HOCs/withHttpRequest'
 import TableRegularComponent from '../TableRegularComponent/TableRegularComponent'
-
 import './StandingsComponent.css'
 import TablePlayoffComponent from '../TablePlayoffComponent/TablePlayoffComponent'
 

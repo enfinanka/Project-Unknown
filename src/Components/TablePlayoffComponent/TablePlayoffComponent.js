@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Card } from 'semantic-ui-react';
-
 import withHttpRequests from '../../HOCs/withHttpRequest';
 import MatchComponent from '../MatchComponent/MatchComponent'
+
 import './TablePlayoffComponent.css'
 
 /**
@@ -27,7 +27,6 @@ class TablePlayoffComponent extends Component {
     .then(res => {
       this.setState({ matches: res })
       this.setState({ rosters: res.next_series.rosters })
-      console.log(this.state)
     })
   }
 

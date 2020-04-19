@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Image, } from 'semantic-ui-react';
+
 import './MatchComponent.css'
 
 export default class MatchComponent extends Component {
