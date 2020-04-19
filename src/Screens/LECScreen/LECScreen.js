@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Card, Header, Image, Button, Icon } from 'semantic-ui-react';
 
 import './LECScreen.css'
-import lecInfoImage from '../../assets/images/lecinfoimage.png';
 import TeamComponent from '../../Components/TeamComponent/TeamComponent'
 import withHttpRequests from '../../HOCs/withHttpRequest';
 import StandingsComponent from '../../Components/StandingsComponent/StandingsComponent'
@@ -19,6 +18,7 @@ class LECScreen extends Component {
       rosters: [],
       Teams: [],
       description: '',
+      country: [],
       activePage: 'Information'
     }
     this.upcomingMatches();
@@ -95,7 +95,6 @@ class LECScreen extends Component {
           </div>
 
           <div className="main-content">
-            <LecInfoComponent />
             {activePage === 'Standings' && 
               <StandingsComponent rosters={rosters}/>
             }
@@ -105,18 +104,7 @@ class LECScreen extends Component {
               </Card.Group>}
             {activePage === 'Information' && 
             <div>
-              <img src={lecInfoImage} className="ui large rounded image" alt="lecinfo" />
-              <div className="info">
-                <Icon className="info-icon" size="large" inverted color='black' name='map marker alternate' />
-                <p className="tournament-ptag">{this.state.matches.country && this.state.matches.country.name}</p>
-                <p className="space-api">, </p>
-                <p className="tournament-ptag">{this.state.matches.city}</p>
-                <Icon className="infoIcon" size="large" inverted color='black' name='users' />
-                <p className="tournament-ptag">{this.state.matches.game && this.state.matches.game.default_lineup_size}</p>
-                <p className="space-api-vs">VS</p>
-                <p className="tournament-ptag">{this.state.matches.game && this.state.matches.game.default_lineup_size}</p>
-              </div>
-              {this.state.description}
+              <LecInfoComponent matches={matches}/>
             </div>}
           </div>
         </div>

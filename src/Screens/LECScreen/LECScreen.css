@@ -67,20 +67,3 @@
   width: 100%;
   background: whitesmoke;
 }
-.info {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  display: flex;
-  flex-direction: row;
-}
-
-.space-api {
-  margin-right: 5px;
-  margin-left: 0px;
-}
-.space-api-vs {
-  margin-top: 3px;
-  margin-left: 5px;
-  margin-right: 5px;
-  font-size: 12px;
-}
