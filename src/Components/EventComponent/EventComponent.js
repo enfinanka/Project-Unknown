@@ -4,6 +4,12 @@ import { Link } from "react-router-dom"
 
 import './EventComponent.css'
 
+/**
+ * @desc Renders one of the two big images appearing on the home screen. Takes in props such as top position and left position from
+ * Home Screen.
+ * @author Ted
+ */
+
 export default class EventComponent extends Component {
   constructor(props) {
     super(props)

@@ -7,6 +7,7 @@ import PlayerComponent from '../PlayerComponent/PlayerComponent';
 /**
  * 
  * @description  replace teamComponent and render a bigger card with more specific data from the team
+ * @author Joel
  */
 
 export default function SingleTeamComponent(props) {

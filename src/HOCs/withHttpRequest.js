@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 /**
  * 
  * @description handeling all request from the abios api
+ * @author Joel
  */
 
 export default function withHttpRequests(WrappedComponent) {

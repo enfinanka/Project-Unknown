@@ -17,6 +17,7 @@ import vitalityLogo from '../../assets/images/teams/vitality.png'
 /**
  * @desc This class is hardcoded (Ugly) to be able to show the regular season standings since it was not available afaik
  * in the API.
+ * @author Ted
  */
 export default class TableRegularComponent extends Component {
 

@@ -7,6 +7,11 @@ import './HomeScreen.css'
 import EventComponent from '../../Components/EventComponent/EventComponent';
 import withHttpRequest from '../../HOCs/withHttpRequest'
 
+/**
+ * @desc Renders the Home Screen, the EventComponent are the two big images appearing on the frontpage.
+ * @author Ted, Elin
+ */
+
 function HomeScreen() {
 
   return (

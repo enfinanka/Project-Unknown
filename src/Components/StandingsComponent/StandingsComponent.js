@@ -1,9 +1,14 @@
 import React, { Component, Fragment } from 'react'
+
 import withHttpRequests from '../../HOCs/withHttpRequest'
 import TableRegularComponent from '../TableRegularComponent/TableRegularComponent'
-
 import './StandingsComponent.css'
 import TablePlayoffComponent from '../TablePlayoffComponent/TablePlayoffComponent'
+
+/**
+ * @desc The entire standings "screen". Changes information based on what button was clicked.
+ * @author Ted
+ */
 
 class StandingsComponent extends Component {
   constructor(props) {

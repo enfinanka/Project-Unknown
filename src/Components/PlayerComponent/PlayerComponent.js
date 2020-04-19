@@ -1,9 +1,10 @@
-import React, { } from 'react'
+import React from 'react'
 import { Card, Feed, Header, Image, Icon } from 'semantic-ui-react'
 
 /**
  * 
  * @description render all players and specific info in singelteamComponent
+ * @author Joel
  */
 
 export default function PlayerComponent(props) {

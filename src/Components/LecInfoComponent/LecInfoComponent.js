@@ -1,13 +1,23 @@
 import React, { Component, Fragment } from 'react'
-import './LecInfoComponent.css';
 
 import withHttpRequests from '../../HOCs/withHttpRequest'
+<<<<<<< HEAD
 import { Icon } from 'semantic-ui-react'
 import lecInfoImage from '../../assets/images/lecinfoimage.png';
 
 
  function LecInfoComponent(props) {
   const { matches } = props;
+=======
+import './LecInfoComponent.css';
+
+/**
+ * @desc 
+ * @author Elin
+ */
+
+class LecInfoComponent extends Component {
+>>>>>>> 56c953360ec52eb15b8c755d5a756a92fac2b051
 
     console.log('leccomp', matches)
     return (

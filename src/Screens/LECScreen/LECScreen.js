@@ -7,7 +7,8 @@ import withHttpRequests from '../../HOCs/withHttpRequest';
 import StandingsComponent from '../../Components/StandingsComponent/StandingsComponent'
 import LecInfoComponent from '../../Components/LecInfoComponent/LecInfoComponent';
 /**
- * @description screen that render all components for LEC 2020 Spring for League of legends
+ * @description screen that render all components for LEC 2020 Spring for League of Legends
+ * @author Ted, Joel, Elin
  */
 class LECScreen extends Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class LECScreen extends Component {
     const { matches, rosters, activePage, Teams, description } = this.state
     return (
       <div className="lec-screen-wrapper">
-        {<img className='background-picture' alt='background' src='https://cdn.shopify.com/s/files/1/0070/6661/5861/files/Featured_product_backgroud_image_1800x.jpg?v=1552502823' />}
+        {<img className='background-picture' alt='bg-colored' src='https://cdn.shopify.com/s/files/1/0070/6661/5861/files/Featured_product_backgroud_image_1800x.jpg?v=1552502823' />}
         <div className="content-wrapper">
           <div className="content-header">
             <img src={matches.images && matches.images.banner} alt="banner" />
@@ -103,7 +104,22 @@ class LECScreen extends Component {
               </Card.Group>}
             {activePage === 'Information' && 
             <div>
+<<<<<<< HEAD
               <LecInfoComponent matches={matches}/>
+=======
+              <img src={lecInfoImage} className="ui large rounded image" alt="lecinfo" />
+              <div className="info">
+                <Icon className="info-icon" size="large" inverted color='black' name='map marker alternate' />
+                <p className="tournament-ptag">{this.state.matches.country && this.state.matches.country.name}</p>
+                <p className="space-api">, </p>
+                <p className="tournament-ptag">{this.state.matches.city}</p>
+                <Icon className="infoIcon" size="large" inverted color='black' name='users' />
+                <p className="tournament-ptag">{this.state.matches.game && this.state.matches.game.default_lineup_size}</p>
+                <p className="space-api-vs">VS</p>
+                <p className="tournament-ptag">{this.state.matches.game && this.state.matches.game.default_lineup_size}</p>
+              </div>
+              {this.state.description}
+>>>>>>> 56c953360ec52eb15b8c755d5a756a92fac2b051
             </div>}
           </div>
         </div>
